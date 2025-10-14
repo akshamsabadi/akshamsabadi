@@ -13,7 +13,7 @@ My background is rooted in Chemical Biology and Organic Chemistry, with extensiv
 
 - 🔭 **Current Focus:** Chemical biologist harnessing AI/ML to unlock novel therapeutics to overcome intractable disease.
 - 🧪 **Expertise:** Bioconjugation, drug conjugate development, organic/polymer synthesis, and computational drug discovery.
-- 📫 **Contact:** andre.shamsabadi@gmail.com
+- 📫 **Contact:** shamsabadium@gmail.com
 
 ---
 
