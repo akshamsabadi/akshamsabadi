@@ -2,7 +2,6 @@
 <!---  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5xZzBqZ3F5NW9kY3R3dDdsd25lZnVjM3B5c295cWZ6Nm10ZHd0eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8B3k1b3JzM4h1bQ2eA/giphy.gif" width="150" alt="Molecule animation"> --->
   <h1>André Kütahya Shamsabadi</h1>
   <h3>Chemical Biologist specialising in Bioconjugation and Drug Discovery</h3>
-  <p><i>Research Investigator · Isomorphic Labs | London, UK</i></p>
 </div>
 
 ---
