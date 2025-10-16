@@ -1,17 +1,19 @@
 <div align="center">
 <h1>André Kütahya Shamsabadi</h1>
-  <h3>Chemical Biologist specializing in Bioconjugation, Protein Engineering, and Drug Discovery</h3>
+  <h3>Chemical Biologist specialising in Bioconjugation, Biologics Engineering, and Drug Discovery</h3>
 </div>
 
 ---
 
 ## 🔬 About Me
 
-I am a Chemical Biologist and Organic Chemist with extensive experience in developing advanced bioconjugation strategies and engineering peptides and proteins for therapeutics and diagnostics. My work integrates synthetic chemistry, molecular biology, and computational tools to innovate in biomedical research.
+The world is filled with hard problems, and solving them is enjoyable! 
+
+I am a Chemical Biologist with extensive experience in developing advanced bioconjugation strategies for therapeutics and diagnostics. My work integrates peptide and protein engineering, synthetic chemistry, biomedical engineering, and computational tools to innovate in biomedical research. I also have a passion for aesthetic data visualisation and graphic design to communicate complex scientific concepts. 
 
 - 🔭 **Current Focus:** Harnessing AI/ML to unlock novel therapeutics and overcome intractable diseases.
 - 🧪 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
-- 🎨 **Passion:** I have a strong interest in data visualization and graphic design, striving to communicate complex scientific concepts clearly and effectively.
+- 🎨 **Passion:** Data visualisation and graphic design to communicate complex scientific concepts clearly and effectively.
 - 📫 **Contact:** shamsabadium@gmail.com
 
 ---
@@ -37,19 +39,9 @@ I am a Chemical Biologist and Organic Chemist with extensive experience in devel
   <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-E67E22?style=flat-square" alt="Nanoparticle Synthesis"/>
 </p>
 
-### Analytical & Biochemistry
-<p>
-  <img src="https://img.shields.io/badge/Mass_Spectrometry-2980B9?style=flat-square" alt="Mass Spectrometry"/>
-  <img src="https://img.shields.io/badge/HPLC-3498DB?style=flat-square" alt="HPLC"/>
-  <img src="https://img.shields.io/badge/NMR_Spectroscopy-5DADE2?style=flat-square" alt="NMR Spectroscopy"/>
-  <img src="https://img.shields.io/badge/Protein_Modification-27AE60?style=flat-square" alt="Protein Modification"/>
-  <img src="https://img.shields.io/badge/Immunoassays-2ECC71?style=flat-square" alt="Immunoassays"/>
-</p>
-
 ### Software, Computational & Design
 <p>
   <img src="https://img.shields.io/badge/Python_(Data_Analysis/ML)-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/Data_Visualization-F39C12?style=for-the-badge" alt="Data Visualization"/>
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
   <img src="https://img.shields.io/badge/ChemDraw-730039?style=for-the-badge&logo=moleculer&logoColor=white" alt="ChemDraw"/>
   <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge" alt="PyMOL"/>
