@@ -12,14 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # This single step does all the work
+      # This is the action that was failing.
+      # Let's ensure the name is 100% correct.
       - name: Update Google Scholar Badge
         uses: ammar-yasser/better-scholar-badge@v1
         with:
-          scholar_id: 'LZmZFtMAAAAJ' # Your Google Scholar ID
-          filename: 'google_scholar_badge.svg' # The output file name
+          scholar_id: 'LZmZFtMAAAAJ'
+          filename: 'google_scholar_badge.svg' 
 
-      # This step commits the new file
       - name: Commit and push if badge changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
