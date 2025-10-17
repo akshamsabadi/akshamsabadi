@@ -20,18 +20,13 @@ In addition to research, I also have a mild obsession with graphic design and da
 
 ---
 
-## 🔬 Professional Experience
+## 🔬 Research Experience
 
-- **Research Investigator** | Isomorphic Labs (Current)
-- **Senior Scientist** | AstraZeneca
-
----
-
-## 🎓 Academic & Research Experience
-
-- **Research Associate** | Materials & Bioengineering | University of Oxford / Imperial College London
-- **Research Assistant** | Chemical Biology | UCL
-- **PhD Researcher** | Synthetic Organic Chemistry | UCL
+- **Research Investigator** · Exploratory Sciences | Isomorphic Labs (Current)
+- **Senior Scientist** · Oncology Targeted Delivery | AstraZeneca
+- **Research Associate** · Materials & Bioengineering | University of Oxford & Imperial College London
+- **Research Assistant** · Chemical Biology | UCL
+- **PhD Researcher** · Synthetic Organic Chemistry | UCL
 
 ---
 
@@ -40,11 +35,12 @@ In addition to research, I also have a mild obsession with graphic design and da
 <div align="left">
   <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   &nbsp;
-  <a href="https://github.com/akshamsabadi" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-  &nbsp;
   <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar"/></a>
   &nbsp;
   <a href="https://orcid.org/0000-0001-8466-5621" target="_blank"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"/></a>
+  &nbsp;
+  <a href="https://github.com/akshamsabadi" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+
 </div>
 
 ---
@@ -55,15 +51,15 @@ In addition to research, I also have a mild obsession with graphic design and da
 <p>
   <img src="https://img.shields.io/badge/Bioconjugation-7D3C98?style=for-the-badge" alt="Bioconjugation"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Drug_Conjugates-A569BD?style=for-the-badge" alt="DCs"/>
+  <img src="https://img.shields.io/badge/Drug_Conjugates-8E44AD?style=for-the-badge" alt="DCs"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Peptide_&_Protein_Engineering-8E44AD?style=for-the-badge" alt="Peptide & Protein Engineering"/>
+  <img src="https://img.shields.io/badge/Peptide_&_Protein_Engineering-A569BD?style=for-the-badge" alt="Peptide & Protein Engineering"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Organic_Synthesis-D35400?style=for-the-badge" alt="Organic Synthesis"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Polymer_Synthesis-E67E22?style=for-the-badge" alt="Polymer Synthesis"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-F39C12?style=for-the-badge" alt="Nanoparticle Synthesis"/>
+  <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-C0392B?style=for-the-badge" alt="Nanoparticle Synthesis"/>
 </p>
 
 ### Software, Computational & Design
@@ -73,6 +69,8 @@ In addition to research, I also have a mild obsession with graphic design and da
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
   &nbsp;
   <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge&logo=moleculer&logoColor=white" alt="PyMOL"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Obsidian-9B59B6?style=for-the-badge&logo=obsidian&logoColor=white" alt="Obsidian"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=inkscape&logoColor=white" alt="Inkscape"/>
 </p>
