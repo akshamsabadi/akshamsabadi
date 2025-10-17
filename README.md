@@ -14,7 +14,7 @@ Hey everyone! I am a scientist operating at the intersection of chemical biology
 In addition to research, I also have a mild obsession with graphic design and data visualisation. I intend to use my GitHub page to populate it with code to generate beautiful graphs and plots to analyse and present data, as well as providing vector format representations of my favourite biotherapeutic modalities in a personally-approved aesthetic style.
 
 - 🔭 **Current Focus:** Harnessing AI/ML to unlock novel therapeutics and overcome intractable diseases.
-- 🧪 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
+- 💡 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
 - ✨ **Passion:** Data visualisation and graphic design to communicate complex scientific concepts clearly and effectively.
 - ✉️ **Contact:** shamsabadium@gmail.com
 
