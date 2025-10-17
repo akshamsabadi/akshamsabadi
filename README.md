@@ -9,7 +9,7 @@
 
 The best problems in science are the important, challenging ones.
 
-Hey everyone! I am a scientist operating at the intersection of chemical biology, drug discovery, and AI/ML. I have extensive experience in both academia and industry in bioconjugation, peptide/protein engineering, and organic/polymer synthesis for the design and development of effective therapeutics and diagnostics. My personal fascination is in how state-of-the-art techniques and an interdisciplinary approach can be used to overcome the most fundamental challenges in biomedical research.
+Hey everyone! I am a scientist operating at the intersection of chemical biology, drug discovery, and AI/ML. I have extensive experience in both academia and industry in bioconjugation, peptide/protein engineering, and organic/polymer synthesis for the design and development of effective therapeutics and diagnostics. My personal fascination is in applying an interdisciplinary approach with state-of-the-art techniques to overcome the most fundamental challenges in biomedical research.
 
 In addition to research, I also have a mild obsession with graphic design and data visualisation. I intend to use my GitHub page to populate it with code to generate beautiful graphs and plots to analyse and present data, as well as providing vector format representations of my favourite biotherapeutic modalities in a personally-approved aesthetic style.
 
