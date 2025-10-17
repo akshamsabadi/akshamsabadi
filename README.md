@@ -68,15 +68,13 @@ In addition to research, I also have a mild obsession with graphic design and da
 
 ### Software, Computational & Design
 <p>
-  <img src="https://img.shields.io/badge/Python_(Data_Analysis/ML)-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
   &nbsp;
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/ChemDraw-730039?style=for-the-badge&logo=moleculer&logoColor=white" alt="ChemDraw"/>
+  <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge&logo=moleculer&logoColor=white" alt="PyMOL"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge&logo=react&logoColor=white" alt="PyMOL"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Inkscape_(Graphic_Design)-000000?style=for-the-badge&logo=inkscape&logoColor=white" alt="Inkscape"/>
+  <img src="https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=inkscape&logoColor=white" alt="Inkscape"/>
 </p>
 
 ---
