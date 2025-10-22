@@ -7,7 +7,7 @@
 
 ## 👤 About Me
 
-Hi There! 
+Welcome! 
 
 I’m André and I enjoy tackling the important, challenging problems in biomedicine. I’m a scientist operating at the intersection of chemical biology, drug discovery, and AI/ML and have extensive experience in both academia and industry in bioconjugation, peptide/protein engineering, and organic/polymer synthesis for the design and development of effective therapeutics and diagnostics. My personal fascination is in applying an interdisciplinary approach with state-of-the-art techniques to overcome the most fundamental challenges in biomedical research.
 
