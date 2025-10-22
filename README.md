@@ -14,7 +14,6 @@ In addition to research, I have a mild obsession with data visualisation and gra
 - 🔭 **Current Focus:** Harnessing AI/ML to unlock novel therapeutics and overcome intractable diseases.
 - 💡 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
 - ✨ **Passion:** Data visualisation and graphic design to communicate complex scientific concepts clearly and effectively.
-- ✉️ **Contact:** shamsabadium@gmail.com
 
 ---
 
