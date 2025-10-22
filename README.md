@@ -7,11 +7,11 @@
 
 ## 👤 About Me
 
-The best problems in science are the important, challenging ones.
+Hi There! 
 
-Hey everyone! I am a scientist operating at the intersection of chemical biology, drug discovery, and AI/ML. I have extensive experience in both academia and industry in bioconjugation, peptide/protein engineering, and organic/polymer synthesis for the design and development of effective therapeutics and diagnostics. My personal fascination is in applying an interdisciplinary approach with state-of-the-art techniques to overcome the most fundamental challenges in biomedical research.
+I’m André and I enjoy tackling the important, challenging problems in biomedicine. I’m a scientist operating at the intersection of chemical biology, drug discovery, and AI/ML and have extensive experience in both academia and industry in bioconjugation, peptide/protein engineering, and organic/polymer synthesis for the design and development of effective therapeutics and diagnostics. My personal fascination is in applying an interdisciplinary approach with state-of-the-art techniques to overcome the most fundamental challenges in biomedical research.
 
-In addition to research, I also have a mild obsession with graphic design and data visualisation. I intend to use my GitHub page to populate it with code to generate beautiful graphs and plots to analyse and present data, as well as providing vector format representations of my favourite biotherapeutic modalities in a personally-approved aesthetic style.
+In addition to research, I also have a mild obsession with data visualisation and graphic design. I intend to use my GitHub page to populate it with code to generate beautiful graphs and plots to analyse and present data, as well as providing vector format representations of my favourite biotherapeutic modalities in a personally-approved aesthetic style.
 
 - 🔭 **Current Focus:** Harnessing AI/ML to unlock novel therapeutics and overcome intractable diseases.
 - 💡 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
