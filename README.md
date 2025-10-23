@@ -7,7 +7,7 @@
 
 Welcome! 
 
-I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biomedicine. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My professional philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
+I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biomedicine. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
 
 In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this GitHub profile to share code for generating beautiful graphs and plots to analyse and present data. I will also provide vector-format representations of my favorite biotherapeutic modalities in a personally-approved aesthetic style.
 
