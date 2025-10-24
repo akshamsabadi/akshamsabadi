@@ -30,7 +30,7 @@ In addition to research, I have a mild obsession with data visualisation and gra
 ## 🌐 Professional Profiles
 
 <div align="left">
-  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   &nbsp;
   <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar"/></a>
   &nbsp;
