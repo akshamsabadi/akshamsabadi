@@ -44,7 +44,7 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ## 🧪 Research Expertise & Tools
 
-### Drug Discovery & Chemical Biology
+### Drug Discovery & Chemical Biology Expertise
 <p>
   <img src="https://img.shields.io/badge/Bioconjugation-7D3C98?style=for-the-badge" alt="Bioconjugation"/>
   &nbsp;
@@ -59,17 +59,22 @@ In addition to research, I have a mild obsession with data visualisation and gra
   <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-C0392B?style=for-the-badge" alt="Nanoparticle Synthesis"/>
 </p>
 
-### Software, Computational & Design
+### Favourite Software
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white" alt="Google Colab"/>
   &nbsp;
   <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge&logo=moleculer&logoColor=white" alt="PyMOL"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Obsidian-9B59B6?style=for-the-badge&logo=obsidian&logoColor=white" alt="Obsidian"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=inkscape&logoColor=white" alt="Inkscape"/>
+</p>
+
+### Programming Languages
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
 </p>
 
 ---
