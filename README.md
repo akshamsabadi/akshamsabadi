@@ -69,14 +69,6 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ---
 
-## 📚 Publications
-
-I have authored 15 manuscripts, comprising original papers, reviews, and communications, with 7 as the primary author.
-
-*For a full list, please see my [Google Scholar Profile](https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao).*
-
----
-
 <div align="center">
   <h3>Profile Views</h3>
   <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=blueviolet&style=flat" alt="akshamsabadi profile views" />
