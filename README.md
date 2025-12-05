@@ -1,6 +1,6 @@
 <div align="center">
 <h1>André Kütahya Shamsabadi</h1>
-  <h3>Chemical Biologist specialising in Bioconjugation, Biotherapeutic Design, and Drug Discovery</h3>
+  <h3>Chemical Biologist specialising in Bioconjugation, Biotherapeutic Design, and Drug Discovery</h3>
 </div>
 
 ---
@@ -30,14 +30,13 @@ In addition to research, I have a mild obsession with data visualisation and gra
 ## 🌐 Professional Profiles
 
 <div align="left">
-  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=flat" alt="LinkedIn"/></a>
   &nbsp;
-  <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar"/></a>
+  <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?logo=google-scholar&logoColor=white&style=flat" alt="Google Scholar"/></a>
   &nbsp;
-  <a href="https://orcid.org/0000-0001-8466-5621" target="_blank"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"/></a>
+  <a href="https://orcid.org/0000-0001-8466-5621" target="_blank"><img src="https://img.shields.io/badge/ORCID-A6CE39?logo=orcid&logoColor=white&style=flat" alt="ORCID"/></a>
   &nbsp;
-  <a href="https://github.com/akshamsabadi" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-
+  <a href="https://github.com/akshamsabadi" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=flat" alt="GitHub"/></a>
 </div>
 
 ---
@@ -46,42 +45,48 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ### Drug Discovery & Chemical Biology Expertise
 <p>
-  <img src="https://img.shields.io/badge/Bioconjugation-7D3C98?style=for-the-badge" alt="Bioconjugation"/>
+  <img src="https://img.shields.io/badge/Bioconjugation-7D3C98?style=flat" alt="Bioconjugation"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Drug_Conjugates-8E44AD?style=for-the-badge" alt="DCs"/>
+  <img src="https://img.shields.io/badge/Drug_Conjugates-8E44AD?style=flat" alt="DCs"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Peptide_&_Protein_Engineering-A569BD?style=for-the-badge" alt="Peptide & Protein Engineering"/>
+  <img src="https://img.shields.io/badge/Peptide_&_Protein_Engineering-A569BD?style=flat" alt="Peptide & Protein Engineering"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Organic_Synthesis-D35400?style=for-the-badge" alt="Organic Synthesis"/>
+  <img src="https://img.shields.io/badge/Organic_Synthesis-D35400?style=flat" alt="Organic Synthesis"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Polymer_Synthesis-E67E22?style=for-the-badge" alt="Polymer Synthesis"/>
+  <img src="https://img.shields.io/badge/Polymer_Synthesis-E67E22?style=flat" alt="Polymer Synthesis"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-C0392B?style=for-the-badge" alt="Nanoparticle Synthesis"/>
+  <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-C0392B?style=flat" alt="Nanoparticle Synthesis"/>
 </p>
 
 ### Favourite Software
 <p>
-  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white" alt="Google Colab"/>
+  <img src="https://img.shields.io/badge/Visual_Studio_Code-007ACC?logo=visualstudiocode&logoColor=white&style=flat&v=1" alt="VS Code"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/PyMOL-0066CC?style=for-the-badge&logo=moleculer&logoColor=white" alt="PyMOL"/>
+  <img src="https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white&style=flat" alt="Jupyter"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Obsidian-9B59B6?style=for-the-badge&logo=obsidian&logoColor=white" alt="Obsidian"/>
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?logo=google-colab&logoColor=white&style=flat" alt="Google Colab"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=inkscape&logoColor=white" alt="Inkscape"/>
+  <img src="https://img.shields.io/badge/PyMOL-0066CC?logo=moleculer&logoColor=white&style=flat" alt="PyMOL"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Obsidian-9B59B6?logo=obsidian&logoColor=white&style=flat" alt="Obsidian"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Inkscape-000000?logo=inkscape&logoColor=white&style=flat" alt="Inkscape"/>
 </p>
 
 ### Programming Languages
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat" alt="Python"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX"/>
+  <img src="https://img.shields.io/badge/D3.js-F9A03C?logo=d3&logoColor=white&style=flat" alt="D3.js"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white&style=flat" alt="LaTeX"/>
 </p>
 
 ---
 
 ## 📚 Publications
 
-I have authored 13 manuscripts, comprising original papers, reviews, and communications, with 7 as the primary author.
+I have authored 15 manuscripts, comprising original papers, reviews, and communications, with 7 as the primary author.
 
 *For a full list, please see my [Google Scholar Profile](https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao).*
 
@@ -89,5 +94,5 @@ I have authored 13 manuscripts, comprising original papers, reviews, and communi
 
 <div align="center">
   <h3>Profile Views</h3>
-  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=blueviolet&style=flat-square" alt="akshamsabadi profile views" />
+  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=blueviolet&style=flat" alt="akshamsabadi profile views" />
 </div>
