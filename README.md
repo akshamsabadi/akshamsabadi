@@ -1,13 +1,13 @@
 <div align="center">
 <h1>André Kütahya Shamsabadi</h1>
-  <h3>Chemical Biologist specialising in Bioconjugation, Biotherapeutic Design, and Drug Discovery</h3>
+  <h3>Chemical Biologist · Data Visualisation Engineer</h3>
 </div>
 
 ---
 
 Welcome! 
 
-I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biomedicine. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
+I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
 
 In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this GitHub profile to share code for generating beautiful graphs and plots to analyse and present data. I will also provide vector-format representations of my favorite biotherapeutic modalities in a personally-approved aesthetic style.
 
@@ -30,7 +30,7 @@ In addition to research, I have a mild obsession with data visualisation and gra
 ## 🌐 Professional Profiles
 
 <div align="left">
-  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=flat" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/akshamsabadi/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IndoaXRlIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGQ9Ik0wIDEuMTQ2QzAgLjUxMy41MjYgMCAxLjE3NSAwaDEzLjY1QzE1LjQ3NCAwIDE2IC41MTMgMTYgMS4xNDZ2MTMuNzA4YzAgLjYzMy0uNTI2IDEuMTQ2LTEuMTc1IDEuMTQ2SDEuMTc1Qy41MjYgMTYgMCAxNS40ODcgMCAxNC44NTR6bTQuOTQzIDEyLjI0OFY2LjE2OUgyLjU0MnY3LjIyNXptLTEuMi04LjIxMmMuODM3IDAgMS4zNTgtLjU1NCAxLjM1OC0xLjI0OC0uMDE1LS43MDktLjUyLTEuMjQ4LTEuMzQyLTEuMjQ4UzIuNCAzLjIyNiAyLjQgMy45MzRjMCAuNjk0LjUyMSAxLjI0OCAxLjMyNyAxLjI0OHptNC45MDggOC4yMTJWOS4zNTljMC0uMjE2LjAxNi0uNDMyLjA4LS41ODYuMTczLS40MzEuNTY4LS44NzggMS4yMzItLjg3OC44NjkgMCAxLjIxNi42NjIgMS4yMTYgMS42MzR2My44NjVoMi40MDFWOS4yNWMwLTIuMjItMS4xODQtMy4yNTItMi43NjQtMy4yNTItMS4yNzQgMC0xLjg0NS43LTIuMTY1IDEuMTkzdi4wMjVoLS4wMTZsLjAxNi0uMDI1VjYuMTY5aC0yLjRjLjAzLjY3OCAwIDcuMjI1IDAgNy4yMjV6Ii8+PC9zdmc+" alt="LinkedIn"/></a>
   &nbsp;
   <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?logo=google-scholar&logoColor=white&style=flat" alt="Google Scholar"/></a>
   &nbsp;
@@ -41,26 +41,11 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ---
 
-## 🧪 Research Expertise & Tools
-
-### Drug Discovery & Chemical Biology Expertise
-<p>
-  <img src="https://img.shields.io/badge/Bioconjugation-7D3C98?style=flat" alt="Bioconjugation"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Drug_Conjugates-8E44AD?style=flat" alt="DCs"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Peptide_&_Protein_Engineering-A569BD?style=flat" alt="Peptide & Protein Engineering"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Organic_Synthesis-D35400?style=flat" alt="Organic Synthesis"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Polymer_Synthesis-E67E22?style=flat" alt="Polymer Synthesis"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Nanoparticle_Synthesis-C0392B?style=flat" alt="Nanoparticle Synthesis"/>
-</p>
+## 🛠️ Software & Languages
 
 ### Favourite Software
 <p>
-  <img src="https://img.shields.io/badge/Visual_Studio_Code-007ACC?logo=visualstudiocode&logoColor=white&style=flat&v=1" alt="VS Code"/>
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ3aGl0ZSI+PHRpdGxlPlZpc3VhbCBTdHVkaW8gQ29kZTwvdGl0bGU+PHBhdGggZD0iTTIzLjE1IDIuNTg3TDE4LjIxLjIxYTEuNDk0IDEuNDk0IDAgMCAwLTEuNzA1LjI5MUw2Ljk0IDEyLjJhLjc0Ni43NDYgMCAwIDEtLjUuMjM0bC01LjQ2NiAyLjA2YS43NDYuNzQ2IDAgMCAwLS4yOTQuNjk3bDUuNDI2IDEwLjU1Yy4xMDUuMjA0LjMxOC4zMzQuNTQ3LjMzNGguMDFaLjYxNC42MTQgMCAwIDAgLjQ0NC0uMjI2bDkuNjA1LTExLjcwNmExLjQ5NCAxLjQ5NCAwIDAgMC0xLjcwNS0uMjlsLTQuOTQgMi4zNzdBMS41IDEuNSAwIDAgMCAyNCAxNC44OFYxLjVhMS41IDEuNSAwIDAgMC0uODUtMS40MTN6Ii8+PC9zdmc+" alt="VS Code"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white&style=flat" alt="Jupyter"/>
   &nbsp;
