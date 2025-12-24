@@ -1,67 +1,50 @@
-name: Update Publications from ORCID
-
-on:
-  schedule:
-    - cron: '0 0 * * *' # Daily at midnight
-  workflow_dispatch: # Allows manual trigger
-
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install requests
-        run: pip install requests
-
-      - name: Fetch from ORCID and Update README
+- name: Fetch from ORCID and Update README
         shell: python
         run: |
           import re
           import requests
 
-          # 1. Fetch works from ORCID Public API
+          # 1. Fetch from ORCID
           orcid_id = "0000-0001-8466-5621"
           url = f"https://pub.orcid.org/v3.0/{orcid_id}/works"
           headers = {"Accept": "application/json"}
-          
-          print(f"Connecting to ORCID for ID: {orcid_id}...")
           response = requests.get(url, headers=headers)
           data = response.json()
           
-          # 2. Parse the publications
-          # Grouping by year and taking the top 5
+          # 2. Parse exactly the 4 latest publications
           works = data.get('group', [])
-          pub_list = ""
+          pub_list = "\n" 
           
-          for work in works[:5]:
+          # We take the 4 most recent
+          for i, work in enumerate(works[:4]):
               summary = work.get('work-summary', [{}])[0]
               
-              # Extract Title
+              # Get Full Title
               title = summary.get('title', {}).get('title', {}).get('value', 'Unknown Title')
               
-              # Extract Year
+              # Get Year
               year = summary.get('publication-date', {}).get('year', {}).get('value', 'N/A')
               
-              # Extract External URL (DOI)
-              external_ids = summary.get('external-ids', {}).get('external-id', [])
+              # Get Journal Name
+              journal = summary.get('journal-title', {}).get('value', 'Scientific Journal') if summary.get('journal-title') else "Research Article"
+              
+              # Get DOI Link
               link = "#"
-              for eid in external_ids:
+              for eid in summary.get('external-ids', {}).get('external-id', []):
                   if eid.get('external-id-type') == 'doi':
-                      doi_val = eid.get('external-id-value')
-                      link = f"https://doi.org/{doi_val}"
+                      link = f"https://doi.org/{eid.get('external-id-value')}"
                       break
 
-              pub_list += f"- [{title}]({link}) ({year})\n"
-              print(f"Added: {title}")
+              # The Aesthetic Layout:
+              # Title is H4 (bold/large), metadata is bold-year, italic-journal, and bullet-link
+              pub_list += (
+                  f"#### {title}\n"
+                  f"**{year}** • *{journal}* • [Full Paper]({link})\n\n"
+              )
+              
+              # Add a separator line between items (except after the last one)
+              if i < 3:
+                  pub_list += "---\n\n"
 
           # 3. Insert into README
           with open('README.md', 'r', encoding='utf-8') as f:
@@ -73,12 +56,4 @@ jobs:
 
           with open('README.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
-          print("README updated successfully.")
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "docs: update publications from ORCID" || exit 0
-          git push
+          print("Success: 4 publications updated with wide-format aesthetic.")
