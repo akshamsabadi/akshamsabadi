@@ -7,13 +7,9 @@
 
 Welcome! 
 
-I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
+I’m André, a **chemical biologist** who enjoys exploring the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, with a focus on designing and developing state-of-the-art therapeutics and diagnostics. My central tenet is that an interdisciplinary approach, paired with state-of-the-art computational techniques, is the most effective way to overcome the challenges of modern biomedical research.
 
-In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this GitHub profile to share code for generating beautiful graphs and plots to analyse and present data. I will also provide vector-format representations of my favorite biotherapeutic modalities in a personally-approved aesthetic style.
-
-- 🔭 **Current Focus:** Harnessing AI/ML to unlock novel therapeutics and overcome intractable diseases.
-- 💡 **Core Expertise:** Bioconjugation, drug conjugate development, peptide & protein engineering, organic/polymer synthesis, and computational drug discovery.
-- ✨ **Passion:** Data visualisation and graphic design to communicate complex scientific concepts clearly and effectively.
+In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-approved aesthetic style.
 
 ---
 
