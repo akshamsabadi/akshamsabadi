@@ -5,15 +5,6 @@
 
 ---
 
-### 📚 Latest Publications
-<!-- GS-FEED:START -->
-- [Magnetically Retrievable Platinum Nanoreporters for Efficient Lateral Flow Immunoassay in Complex Bio‐Samples](https://doi.org/10.1002/smll.202506622) (2025)
-- [The Nanozyme Revolution: Enhancing the Performance of Medical Biosensing Platforms](https://doi.org/10.1002/adma.202300184) (2024)
-- [Fine-tuning thio-pyridazinediones as SMDC scaffolds (with intracellular thiol release via a novel self-immolative linker)](https://doi.org/10.1039/C9CC08744C) (2020)
-- [Formation of Synthetically Versatile 2-Aminobenzophenones from Readily Accessed Acyl Hydrazides](https://doi.org/10.1021/acsomega.9b03417) (2019)
-- [Recent advances in metal-free aerobic C–H activation](https://doi.org/10.1039/C9OB00339H) (2019)
-<!-- GS-FEED:END -->
-
 Welcome! 
 
 I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
@@ -75,6 +66,15 @@ In addition to research, I have a mild obsession with data visualisation and gra
   &nbsp;
   <img src="https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white&style=flat" alt="LaTeX"/>
 </p>
+
+### 📚 Latest Publications
+<!-- GS-FEED:START -->
+- [Magnetically Retrievable Platinum Nanoreporters for Efficient Lateral Flow Immunoassay in Complex Bio‐Samples](https://doi.org/10.1002/smll.202506622) (2025)
+- [The Nanozyme Revolution: Enhancing the Performance of Medical Biosensing Platforms](https://doi.org/10.1002/adma.202300184) (2024)
+- [Fine-tuning thio-pyridazinediones as SMDC scaffolds (with intracellular thiol release via a novel self-immolative linker)](https://doi.org/10.1039/C9CC08744C) (2020)
+- [Formation of Synthetically Versatile 2-Aminobenzophenones from Readily Accessed Acyl Hydrazides](https://doi.org/10.1021/acsomega.9b03417) (2019)
+- [Recent advances in metal-free aerobic C–H activation](https://doi.org/10.1039/C9OB00339H) (2019)
+<!-- GS-FEED:END -->
 
 ---
 
