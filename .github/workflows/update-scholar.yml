@@ -1,52 +1,75 @@
-- name: Fetch from ORCID and Update README
+name: Update Publications from ORCID
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Fetch and Update README
         shell: python
         run: |
           import re
           import requests
 
-          # 1. Fetch from ORCID
+          # 1. Fetch from ORCID (André Kütahya Shamsabadi)
           orcid_id = "0000-0001-8466-5621"
           url = f"https://pub.orcid.org/v3.0/{orcid_id}/works"
           headers = {"Accept": "application/json"}
-          response = requests.get(url, headers=headers)
-          data = response.json()
+          
+          try:
+              response = requests.get(url, headers=headers)
+              data = response.json()
+              works = data.get('group', [])
+          except Exception as e:
+              print(f"Error fetching data: {e}")
+              exit(1)
           
           # 2. Parse exactly the 4 latest publications
-          works = data.get('group', [])
           pub_list = "\n" 
-          
-          # We take the 4 most recent
           for i, work in enumerate(works[:4]):
               summary = work.get('work-summary', [{}])[0]
               
-              # Get Full Title
+              # Extract Metadata
               title = summary.get('title', {}).get('title', {}).get('value', 'Unknown Title')
-              
-              # Get Year
               year = summary.get('publication-date', {}).get('year', {}).get('value', 'N/A')
+              journal = summary.get('journal-title', {}).get('value', 'Research Article') if summary.get('journal-title') else "Scientific Journal"
               
-              # Get Journal Name
-              journal = summary.get('journal-title', {}).get('value', 'Scientific Journal') if summary.get('journal-title') else "Research Article"
-              
-              # Get DOI Link
+              # Extract DOI Link
               link = "#"
-              for eid in summary.get('external-ids', {}).get('external-id', []):
+              external_ids = summary.get('external-ids', {}).get('external-id', [])
+              for eid in external_ids:
                   if eid.get('external-id-type') == 'doi':
                       link = f"https://doi.org/{eid.get('external-id-value')}"
                       break
 
-              # The Aesthetic Layout:
-              # Title is H4 (bold/large), metadata is bold-year, italic-journal, and bullet-link
+              # Format for Borderless wide-format aesthetic
               pub_list += (
                   f"#### {title}\n"
                   f"**{year}** • *{journal}* • [Full Paper]({link})\n\n"
               )
               
-              # Add a separator line between items (except after the last one)
+              # Add divider except after the last item
               if i < 3:
                   pub_list += "---\n\n"
 
-          # 3. Insert into README
+          # 3. Insert into README.md
           with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
 
@@ -56,4 +79,12 @@
 
           with open('README.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
-          print("Success: 4 publications updated with wide-format aesthetic.")
+          print("Successfully updated the 4 latest publications.")
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update latest publications from ORCID" || exit 0
+          git push
