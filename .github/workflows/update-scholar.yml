@@ -1,4 +1,4 @@
-name: Update Google Scholar Publications
+name: Update Publications from ORCID
 
 on:
   schedule:
@@ -19,30 +19,49 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install scholarly
-        run: pip install scholarly
+      - name: Install requests
+        run: pip install requests
 
-      - name: Fetch and Update README
+      - name: Fetch from ORCID and Update README
         shell: python
         run: |
           import re
-          from scholarly import scholarly
+          import requests
 
-          # 1. Fetch publications
-          author = scholarly.search_author_id('LZmZFtMAAAAJ')
-          scholarly.fill(author, sections=['publications'])
+          # 1. Fetch works from ORCID Public API
+          orcid_id = "0000-0001-8466-5621"
+          url = f"https://pub.orcid.org/v3.0/{orcid_id}/works"
+          headers = {"Accept": "application/json"}
           
-          # Sort by year (descending) and take top 5
-          pubs = sorted(author['publications'], key=lambda x: x.get('bib', {}).get('pub_year', '0'), reverse=True)[:5]
-
-          # 2. Format the markdown list
+          print(f"Connecting to ORCID for ID: {orcid_id}...")
+          response = requests.get(url, headers=headers)
+          data = response.json()
+          
+          # 2. Parse the publications
+          # Grouping by year and taking the top 5
+          works = data.get('group', [])
           pub_list = ""
-          for p in pubs:
-              title = p['bib'].get('title', 'Unknown Title')
-              year = p['bib'].get('pub_year', 'N/A')
-              # Try to get a link if available
-              link = f"https://scholar.google.com/citations?view_op=view_citation&citation_for_view={p['author_pub_id']}"
+          
+          for work in works[:5]:
+              summary = work.get('work-summary', [{}])[0]
+              
+              # Extract Title
+              title = summary.get('title', {}).get('title', {}).get('value', 'Unknown Title')
+              
+              # Extract Year
+              year = summary.get('publication-date', {}).get('year', {}).get('value', 'N/A')
+              
+              # Extract External URL (DOI)
+              external_ids = summary.get('external-ids', {}).get('external-id', [])
+              link = "#"
+              for eid in external_ids:
+                  if eid.get('external-id-type') == 'doi':
+                      doi_val = eid.get('external-id-value')
+                      link = f"https://doi.org/{doi_val}"
+                      break
+
               pub_list += f"- [{title}]({link}) ({year})\n"
+              print(f"Added: {title}")
 
           # 3. Insert into README
           with open('README.md', 'r', encoding='utf-8') as f:
@@ -54,11 +73,12 @@ jobs:
 
           with open('README.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
+          print("README updated successfully.")
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "docs: update latest publications" || exit 0
+          git commit -m "docs: update publications from ORCID" || exit 0
           git push
