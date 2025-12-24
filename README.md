@@ -41,9 +41,9 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ---
 
-## 🛠️ Software & Languages
+## 🛠️ Research & Engineering Toolkit
 
-### Favourite Software
+### Technical Ecosystem
 <p>
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ3aGl0ZSI+PHRpdGxlPlZpc3VhbCBTdHVkaW8gQ29kZTwvdGl0bGU+PHBhdGggZD0iTTIzLjE1IDIuNTg3TDE4LjIxLjIxYTEuNDk0IDEuNDk0IDAgMCAwLTEuNzA1LjI5MUw2Ljk0IDEyLjJhLjc0Ni43NDYgMCAwIDEtLjUuMjM0bC01LjQ2NiAyLjA2YS43NDYuNzQ2IDAgMCAwLS4yOTQuNjk3bDUuNDI2IDEwLjU1Yy4xMDUuMjA0LjMxOC4zMzQuNTQ3LjMzNGguMDFaLjYxNC42MTQgMCAwIDAgLjQ0NC0uMjI2bDkuNjA1LTExLjcwNmExLjQ5NCAxLjQ5NCAwIDAgMC0xLjcwNS0uMjlsLTQuOTQgMi4zNzdBMS41IDEuNSAwIDAgMCAyNCAxNC44OFYxLjVhMS41IDEuNSAwIDAgMC0uODUtMS40MTN6Ii8+PC9zdmc+" alt="VS Code"/>
   &nbsp;
