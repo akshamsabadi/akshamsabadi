@@ -5,6 +5,10 @@
 
 ---
 
+### 📚 Latest Publications
+<!-- GS-FEED:START -->
+<!-- GS-FEED:END -->
+
 Welcome! 
 
 I’m André, a **chemical biologist** who enjoys tackling the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on designing and developing effective therapeutics and diagnostics. My personal philosophy is that applying an interdisciplinary approach and state-of-the-art techniques is the most effective way to overcome fundamental challenges in biomedical research.
