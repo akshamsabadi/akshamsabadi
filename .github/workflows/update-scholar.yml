@@ -2,25 +2,60 @@ name: Update Google Scholar Publications
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every night at midnight
-  workflow_dispatch: # Allows you to run it manually
+    - cron: '0 0 * * *' # Daily at midnight
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Essential for the bot to save changes to your README
+      contents: write
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Update Scholar Publications
-        uses: su-shubh/google-scholar-publications@v0.5.0
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          user_id: LZmZFtMAAAAJ # Your Google Scholar ID
-          max_publications: 5
+          python-version: '3.x'
 
-      - name: Commit and Push changes
+      - name: Install scholarly
+        run: pip install scholarly
+
+      - name: Fetch and Update README
+        shell: python
+        run: |
+          import re
+          from scholarly import scholarly
+
+          # 1. Fetch publications
+          author = scholarly.search_author_id('LZmZFtMAAAAJ')
+          scholarly.fill(author, sections=['publications'])
+          
+          # Sort by year (descending) and take top 5
+          pubs = sorted(author['publications'], key=lambda x: x.get('bib', {}).get('pub_year', '0'), reverse=True)[:5]
+
+          # 2. Format the markdown list
+          pub_list = ""
+          for p in pubs:
+              title = p['bib'].get('title', 'Unknown Title')
+              year = p['bib'].get('pub_year', 'N/A')
+              # Try to get a link if available
+              link = f"https://scholar.google.com/citations?view_op=view_citation&citation_for_view={p['author_pub_id']}"
+              pub_list += f"- [{title}]({link}) ({year})\n"
+
+          # 3. Insert into README
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          pattern = r"(<!-- GS-FEED:START -->).*?(<!-- GS-FEED:END -->)"
+          replacement = f"\\1\n{pub_list}\\2"
+          new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
