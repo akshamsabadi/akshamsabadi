@@ -69,6 +69,25 @@ In addition to research, I have a mild obsession with data visualisation and gra
 
 ### 📚 Latest Publications
 <!-- GS-FEED:START -->
+
+#### Magnetically Retrievable Platinum Nanoreporters for Efficient Lateral Flow Immunoassay in Complex Bio‐Samples
+**2025** • *Small* • [Full Paper](https://doi.org/10.1002/smll.202506622)
+
+---
+
+#### The Nanozyme Revolution: Enhancing the Performance of Medical Biosensing Platforms
+**2024** • *Advanced Materials* • [Full Paper](https://doi.org/10.1002/adma.202300184)
+
+---
+
+#### Fine-tuning thio-pyridazinediones as SMDC scaffolds (with intracellular thiol release via a novel self-immolative linker)
+**2020** • *Chemical Communications* • [Full Paper](https://doi.org/10.1039/C9CC08744C)
+
+---
+
+#### Formation of Synthetically Versatile 2-Aminobenzophenones from Readily Accessed Acyl Hydrazides
+**2019** • *ACS Omega* • [Full Paper](https://doi.org/10.1021/acsomega.9b03417)
+
 <!-- GS-FEED:END -->
 
 ---
