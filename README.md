@@ -1,6 +1,6 @@
 <div align="center">
 <h1>André Kütahya Shamsabadi</h1>
-  <h3>Chemical Biologist · Data Visualisation Engineer</h3>
+  <h3>Chemical Biologist</h3>
 </div>
 
 ---
