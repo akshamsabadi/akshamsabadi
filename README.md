@@ -9,7 +9,7 @@ Welcome!
 
 I’m André, a **chemical biologist** who enjoys exploring the important and challenging problems in biotherapeutic design. I operate at the intersection of peptide/protein engineering, drug discovery, and AI/ML. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, with a focus on designing and developing state-of-the-art therapeutics and diagnostics. My central tenet is that an interdisciplinary approach, paired with state-of-the-art computational techniques, is the most effective way to overcome the challenges of modern biomedical research.
 
-In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-approved aesthetic style.
+In addition to research, I have a mild obsession with data visualisation and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
 
 ---
 
