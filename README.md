@@ -67,7 +67,7 @@ In addition to research, I have a mild obsession with data visualisation and gra
 <!-- GS-FEED:START -->
 
 #### Magnetically Retrievable Platinum Nanoreporters for Efficient Lateral Flow Immunoassay in Complex Bio‐Samples
-**2025** • *Small* • [Full Paper](https://doi.org/10.1002/smll.202506622)
+**2026** • *Small* • [Full Paper](https://doi.org/10.1002/smll.202506622)
 
 ---
 
