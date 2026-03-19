@@ -66,6 +66,7 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
   <img src="assets/badges/badge_PyMOL.svg" alt="PyMOL"/>
   <img src="assets/badges/badge_Inkscape.svg" alt="Inkscape"/>
   <img src="assets/badges/badge_Obsidian.svg" alt="Obsidian"/>
+  <img src="assets/badges/badge_Blender.svg" alt="Blender"/>
 </p>
 
 ---
