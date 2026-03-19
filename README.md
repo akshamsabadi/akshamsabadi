@@ -32,7 +32,7 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 **<img src="https://www.google.com/s2/favicons?domain=astrazeneca.com&sz=128" width="24" height="24" align="center" alt="AstraZeneca" /> AstraZeneca**
 > **Senior Scientist** · *Oncology Targeted Delivery*
 
-**<img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" width="24" height="24" align="center" alt="University of Oxford" /> University of Oxford**
+**<img src="https://www.google.com/s2/favicons?domain=kavlinano.ox.ac.uk&sz=128" width="24" height="24" align="center" alt="Kavli Institute for Nanoscience Discovery, University of Oxford" /> Kavli Institute for Nanoscience Discovery, University of Oxford**
 > **Research Associate / Academic Visitor** · *Biomedical Engineering*
 
 **<img src="https://www.google.com/s2/favicons?domain=imperial.ac.uk&sz=128" width="24" height="24" align="center" alt="Imperial College London" /> Imperial College London**
