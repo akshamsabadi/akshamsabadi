@@ -54,7 +54,7 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 <br>
 <p>
   <img src="https://img.shields.io/badge/PyMOL-1e1e2e?style=for-the-badge&logo=moleculer&logoColor=89b4fa" alt="PyMOL"/>
-  <img src="https://img.shields.io/badge/ChimeraX-1e1e2e?style=for-the-badge&logoColor=a6e3a1" alt="ChimeraX"/>
+  <img src="https://img.shields.io/badge/ChimeraX-1e1e2e?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2E2ZTNhMSI+PHRleHQgeD0iMSIgeT0iMTkiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjkwMCIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5DWDwvdGV4dD48L3N2Zz4=&logoColor=a6e3a1" alt="ChimeraX"/>
   <img src="https://img.shields.io/badge/Inkscape-1e1e2e?style=for-the-badge&logo=inkscape&logoColor=cdd6f4" alt="Inkscape"/>
   <img src="https://img.shields.io/badge/Obsidian-1e1e2e?style=for-the-badge&logo=obsidian&logoColor=cba6f7" alt="Obsidian"/>
 </p>
@@ -63,14 +63,20 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 
 ### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Graphs & Tooling" />
 
-In addition to research, I have a mild obsession with data visualisation & graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
+In addition to research, I have a mild obsession with data visualisation & graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favourite biotherapeutic modalities in a personally-designed aesthetic.
 
-*(Repositories and visuals coming soon...)*
+<br>
+<ul style="list-style-type: none;">
+  <li>📈 &nbsp;<b><a href="https://akshamsabadi.github.io/lod-calculator/">LOD Calculator</a></b>: A web application for calculating the Limit of Detection (LOD) and Limit of Quantification (LOQ). (<a href="https://github.com/akshamsabadi/lod-calculator">Source Code</a>)</li>
+</ul>
+<br>
+
+*(More repositories and visuals coming soon...)*
 
 ---
 
 ### <img src="assets/title_analytics.svg" alt="✦ GitHub Analytics" />
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=cba6f7&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=1e1e2e&labelColor=cba6f7&style=for-the-badge" alt="Profile Views" />
 </p>
