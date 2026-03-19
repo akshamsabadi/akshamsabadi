@@ -1,18 +1,17 @@
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=40&pause=1000&color=cba6f7&center=true&vCenter=true&width=800&height=60&lines=Andr%C3%A9+K%C3%BCtahya+Shamsabadi" alt="André Kütahya Shamsabadi" />
-  <br>
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=20&pause=1000&color=89b4fa&center=true&vCenter=true&width=800&height=40&lines=Chemical+Biologist+%E2%80%A2+AI%2FML+%E2%80%A2+Data+Visualization" alt="Chemical Biologist · AI/ML · Data Visualization" />
-</p>
+<div align="center">
+  <h1>André Kütahya Shamsabadi</h1>
+  <h3>Chemical Biologist · AI/ML · Data Visualization</h3>
+</div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/akshamsabadi/"><img src="https://img.shields.io/badge/LinkedIn-1e1e2e?style=for-the-badge&logo=linkedin&logoColor=89b4fa" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/akshamsabadi/"><img src="https://img.shields.io/badge/LinkedIn-1e1e2e?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM4OWI0ZmEiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTAgMS4xNDZDMCAuNTEzLjUyNiAwIDEuMTc1IDBoMTMuNjVDMTUuNDc0IDAgMTYgLjUxMyAxNiAxLjE0NnYxMy43MDhjMCAuNjMzLS41MjYgMS4xNDYtMS4xNzUgMS4xNDZIMS4xNzVDLjUyNiAxNiAwIDE1LjQ4NyAwIDE0Ljg1NHptNC45NDMgMTIuMjQ4VjYuMTY5SDIuNTQydjcuMjI1em0tMS4yLTguMjEyYy44MzcgMCAxLjM1OC0uNTU0IDEuMzU4LTEuMjQ4LS4wMTUtLjcwOS0uNTItMS4yNDgtMS4zNDItMS4yNDhTMi40IDMuMjI2IDIuNCAzLjkzNGMwIC42OTQuNTIxIDEuMjQ4IDEuMzI3IDEuMjQ4em00LjkwOCA4LjIxMlY5LjM1OWMwLS4yMTYuMDE2LS40MzIuMDgtLjU4Ni4xNzMtLjQzMS41NjgtLjg3OCAxLjIzMi0uODc4Ljg2OSAwIDEuMjE2LjY2MiAxLjIxNiAxLjYzNHYzLjg2NWgyLjQwMVY5LjI1YzAtMi4yMi0xLjE4NC0zLjI1Mi0yLjc2NC0zLjI1Mi0xLjI3NCAwLTEuODQ1LjctMi4xNjUgMS4xOTN2LjAyNWgtLjAxNmwuMDE2LS4wMjVWNi4xNjloLTIuNGMuMDMuNjc4IDAgNy4yMjUgMCA3LjIyNXoiLz48L3N2Zz4=" alt="LinkedIn" /></a>
   <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao"><img src="https://img.shields.io/badge/Google_Scholar-1e1e2e?style=for-the-badge&logo=google-scholar&logoColor=89b4fa" alt="Google Scholar" /></a>
   <a href="https://orcid.org/0000-0001-8466-5621"><img src="https://img.shields.io/badge/ORCID-1e1e2e?style=for-the-badge&logo=orcid&logoColor=a6e3a1" alt="ORCID" /></a>
 </p>
 
 ---
 
-### <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=1000&color=cba6f7&vCenter=true&width=300&height=35&lines=%E2%9C%A6+About+Me" alt="✦ About Me" />
+### ✦ About Me
 
 Welcome! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, with a focus on designing and developing state-of-the-art therapeutics and diagnostics. 
 
@@ -20,28 +19,30 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
 
 ---
 
-### <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=1000&color=cba6f7&vCenter=true&width=300&height=35&lines=%E2%9C%A6+Experience" alt="✦ Experience" />
+### ✦ Experience
 
-| Role | Organization |
-| :--- | :--- |
-| **Research Investigator** · *Exploratory Sciences* | **Isomorphic Labs** (Current) |
-| **Senior Scientist** · *Oncology Targeted Delivery* | **AstraZeneca** |
-| **Research Associate** · *Materials & Bioengineering* | **University of Oxford & Imperial College London** |
-| **Research Assistant** · *Chemical Biology* | **UCL** |
-| **PhD Researcher** · *Synthetic Organic Chemistry* | **UCL** |
+<br>
+<ul style="list-style-type: none;">
+  <li>💼 &nbsp;<b>Research Investigator</b> · <i>Exploratory Sciences</i> at <b>Isomorphic Labs</b> (Current)</li><br>
+  <li>🧪 &nbsp;<b>Senior Scientist</b> · <i>Oncology Targeted Delivery</i> at <b>AstraZeneca</b></li><br>
+  <li>🔬 &nbsp;<b>Research Associate</b> · <i>Materials & Bioengineering</i> at <b>University of Oxford & Imperial College London</b></li><br>
+  <li>🧬 &nbsp;<b>Research Assistant</b> · <i>Chemical Biology</i> at <b>UCL</b></li><br>
+  <li>🎓 &nbsp;<b>PhD Researcher</b> · <i>Synthetic Organic Chemistry</i> at <b>UCL</b></li>
+</ul>
+<br>
 
 ---
 
-### <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=1000&color=cba6f7&vCenter=true&width=400&height=35&lines=%E2%9C%A6+Technical+Toolkit" alt="✦ Technical Toolkit" />
+### ✦ Technical Toolkit
 
 <details>
 <summary><b>Programming & Ecosystem</b></summary>
 <br>
 <p>
   <img src="https://img.shields.io/badge/Python-1e1e2e?style=for-the-badge&logo=python&logoColor=89b4fa" alt="Python"/>
-  <img src="https://img.shields.io/badge/D3.js-1e1e2e?style=for-the-badge&logo=d3.js&logoColor=fab387" alt="D3.js"/>
+  <img src="https://img.shields.io/badge/D3.js-1e1e2e?style=for-the-badge&logo=d3&logoColor=fab387" alt="D3.js"/>
   <img src="https://img.shields.io/badge/LaTeX-1e1e2e?style=for-the-badge&logo=latex&logoColor=94e2d5" alt="LaTeX"/>
-  <img src="https://img.shields.io/badge/VS_Code-1e1e2e?style=for-the-badge&logo=visualstudiocode&logoColor=89b4fa" alt="VS Code"/>
+  <img src="https://img.shields.io/badge/VS_Code-1e1e2e?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjODliNGZhIj48dGl0bGU+VmlzdWFsIFN0dWRpbyBDb2RlPC90aXRsZT48cGF0aCBkPSJNMjMuMTUgMi41ODdMMTguMjEuMjFhMS40OTQgMS40OTQgMCAwIDAtMS43MDUuMjkxTDYuOTQgMTIuMmEuNzQ2Ljc0NiAwIDAgMS0uNS4yMzRsLTUuNDY2IDIuMDZhLjc0Ni43NDYgMCAwIDAtLjI5NC42OTdsNS40MjYgMTAuNTVjLjEwNS4yMDQuMzE4LjMzNC41NDcuMzM0aC4wMVouNjE0LjYxNCAwIDAgMCAuNDQ0LS4yMjZsOS42MDUtMTEuNzA2YTEuNDk0IDEuNDk0IDAgMCAwLTEuNzA1LS4yOWwtNC45NCAyLjM3N0ExLjUgMS41IDAgMCAwIDI0IDE0Ljg4VjEuNWExLjUgMS41IDAgMCAwLS44NS0xLjQxM3oiLz48L3N2Zz4=" alt="VS Code"/>
   <img src="https://img.shields.io/badge/Jupyter-1e1e2e?style=for-the-badge&logo=jupyter&logoColor=fab387" alt="Jupyter"/>
   <img src="https://img.shields.io/badge/Google_Colab-1e1e2e?style=for-the-badge&logo=googlecolab&logoColor=f9e2af" alt="Google Colab"/>
 </p>
@@ -59,7 +60,7 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
 
 ---
 
-### <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=1000&color=cba6f7&vCenter=true&width=800&height=35&lines=%E2%9C%A6+Aesthetic+Graphs+And+Biotherapeutic+Modalities" alt="✦ Aesthetic Graphs & Biotherapeutic Modalities" />
+### ✦ Aesthetic Graphs & Biotherapeutic Modalities
 
 In addition to research, I have a mild obsession with data visualization and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
 
@@ -67,12 +68,7 @@ In addition to research, I have a mild obsession with data visualization and gra
 
 ---
 
-### <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=22&pause=1000&color=cba6f7&vCenter=true&width=400&height=35&lines=%E2%9C%A6+GitHub+Analytics" alt="✦ GitHub Analytics" />
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=akshamsabadi&theme=catppuccin_mocha&show_icons=true&hide_border=true&count_private=true" alt="André's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=akshamsabadi&theme=catppuccin_mocha&show_icons=true&hide_border=true&layout=compact" alt="André's Top Languages" />
-</p>
+### ✦ GitHub Analytics
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=cba6f7&style=for-the-badge" alt="Profile Views" />
