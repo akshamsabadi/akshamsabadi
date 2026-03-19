@@ -25,13 +25,20 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 ### <img src="assets/title_exp.svg" alt="✦ Experience" />
 
 <br>
-<ul style="list-style-type: none;">
-  <li><b>Research Investigator</b> · <i>Exploratory Sciences</i> at <b>Isomorphic Labs</b> (Current)</li><br>
-  <li><b>Senior Scientist</b> · <i>Oncology Targeted Delivery</i> at <b>AstraZeneca</b></li><br>
-  <li><b>Research Associate</b> · <i>Materials & Bioengineering</i> at <b>University of Oxford & Imperial College London</b></li><br>
-  <li><b>Research Assistant</b> · <i>Chemical Biology</i> at <b>UCL</b></li><br>
-  <li><b>PhD Researcher</b> · <i>Synthetic Organic Chemistry</i> at <b>UCL</b></li>
-</ul>
+
+**Isomorphic Labs**
+> **Research Investigator** · *Exploratory Sciences* (Current)
+
+**AstraZeneca**
+> **Senior Scientist** · *Oncology Targeted Delivery*
+
+**University of Oxford & Imperial College London**
+> **Research Associate** · *Materials & Bioengineering*
+
+**UCL**
+> **Research Assistant** · *Chemical Biology*  
+> **PhD Researcher** · *Synthetic Organic Chemistry*
+
 <br>
 
 ---
@@ -47,27 +54,27 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
   <img src="https://img.shields.io/badge/VS_Code-1e1e2e?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjODliNGZhIj48dGl0bGU+VmlzdWFsIFN0dWRpbyBDb2RlPC90aXRsZT48cGF0aCBkPSJNMjMuMTUgMi41ODdMMTguMjEuMjFhMS40OTQgMS40OTQgMCAwIDAtMS43MDUuMjkxTDYuOTQgMTIuMmEuNzQ2Ljc0NiAwIDAgMS0uNS4yMzRsLTUuNDY2IDIuMDZhLjc0Ni43NDYgMCAwIDAtLjI5NC42OTdsNS40MjYgMTAuNTVjLjEwNS4yMDQuMzE4LjMzNC41NDcuMzM0aC4wMVouNjE0LjYxNCAwIDAgMCAuNDQ0LS4yMjZsOS42MDUtMTEuNzA2YTEuNDk0IDEuNDk0IDAgMCAwLTEuNzA1LS4yOWwtNC45NCAyLjM3N0ExLjUgMS41IDAgMCAwIDI0IDE0Ljg4VjEuNWExLjUgMS41IDAgMCAwLS44NS0xLjQxM3oiLz48L3N2Zz4=" alt="VS Code"/>
   <img src="https://img.shields.io/badge/Jupyter-1e1e2e?style=for-the-badge&logo=jupyter&logoColor=fab387" alt="Jupyter"/>
   <img src="https://img.shields.io/badge/Google_Colab-1e1e2e?style=for-the-badge&logo=googlecolab&logoColor=f9e2af" alt="Google Colab"/>
+  <img src="https://img.shields.io/badge/Overleaf-1e1e2e?style=for-the-badge&logo=overleaf&logoColor=a6e3a1" alt="Overleaf"/>
 </p>
 <br>
 
-<b>Design & Visualization</b>
+<b>Design & Visualisation</b>
 <br>
 <p>
   <img src="https://img.shields.io/badge/PyMOL-1e1e2e?style=for-the-badge&logo=moleculer&logoColor=89b4fa" alt="PyMOL"/>
-  <img src="https://img.shields.io/badge/ChimeraX-1e1e2e?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2E2ZTNhMSI+PHRleHQgeD0iMSIgeT0iMTkiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjkwMCIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5DWDwvdGV4dD48L3N2Zz4=&logoColor=a6e3a1" alt="ChimeraX"/>
   <img src="https://img.shields.io/badge/Inkscape-1e1e2e?style=for-the-badge&logo=inkscape&logoColor=cdd6f4" alt="Inkscape"/>
   <img src="https://img.shields.io/badge/Obsidian-1e1e2e?style=for-the-badge&logo=obsidian&logoColor=cba6f7" alt="Obsidian"/>
 </p>
 
 ---
 
-### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Graphs & Tooling" />
+### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Data Vis. & Graphics" />
 
 In addition to research, I have a mild obsession with data visualisation & graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favourite biotherapeutic modalities in a personally-designed aesthetic.
 
 <br>
-<ul style="list-style-type: none;">
-  <li>📈 &nbsp;<b><a href="https://akshamsabadi.github.io/lod-calculator/">LOD Calculator</a></b>: A web application for calculating the Limit of Detection (LOD) and Limit of Quantification (LOQ). (<a href="https://github.com/akshamsabadi/lod-calculator">Source Code</a>)</li>
+<ul>
+  <li><b><a href="https://akshamsabadi.github.io/lod-calculator/">LOD Calculator</a></b> (<a href="https://github.com/akshamsabadi/lod-calculator">Source Code</a>)</li>
 </ul>
 <br>
 
