@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/title_main.svg" alt="André Kütahya Shamsabadi" />
   <br>
-  <img src="assets/title_sub.svg" alt="Chemical Biologist · AI/ML · Data Visualization" />
+  <img src="assets/title_sub.svg" alt="Chemical Biologist · AI/ML · Data Visualisation" />
 </div>
 
 <p align="center">
@@ -14,9 +14,11 @@
 
 ### <img src="assets/title_about.svg" alt="✦ About Me" />
 
-Welcome! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. With a foundational background in chemistry, my central motivation is to leverage this perspective to solve significant challenges in biology—which, in itself, is the most complex expression of chemistry known.
+Hey! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. 
 
-I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise spans bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on developing state-of-the-art therapeutics and diagnostics. I believe that an interdisciplinary approach, paired with advanced computational techniques, is the most effective way to drive modern biomedical research forward.
+My foundational background is in organic chemistry, and an early fascination of mine was to utilise this to address significant challenges in biology, which in itself, is the most complex and important expression of chemistry.
+
+I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise spans bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on developing state-of-the-art therapeutics and diagnostics. My central tenet is that an interdisciplinary approach, paired with state-of-the-art tools & resources, is the most effective way to overcome the longstanding challenges in biomedical research.
 
 ---
 
@@ -59,9 +61,9 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 
 ---
 
-### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Graphs & Biotherapeutic Modalities" />
+### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Graphs & Tooling" />
 
-In addition to research, I have a mild obsession with data visualization and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
+In addition to research, I have a mild obsession with data visualisation & graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
 
 *(Repositories and visuals coming soon...)*
 
