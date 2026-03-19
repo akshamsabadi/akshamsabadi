@@ -29,10 +29,10 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 **<img src="https://avatars.githubusercontent.com/u/96115000?v=4" width="24" height="24" align="center" alt="Isomorphic Labs" /> Isomorphic Labs**
 > **Research Investigator** · *Exploratory Sciences* (Current)
 
-**<img src="https://www.google.com/s2/favicons?domain=astrazeneca.com&sz=128" width="24" height="24" align="center" alt="AstraZeneca" /> AstraZeneca**
+**<img src="https://www.google.com/s2/favicons?domain=astrazeneca.com&sz=128" width="24" height="24" align="center" alt="AstraZeneca" style="background-color: #8A0051; border-radius: 4px;" /> AstraZeneca**
 > **Senior Scientist** · *Oncology Targeted Delivery*
 
-**<img src="https://www.google.com/s2/favicons?domain=kavlinano.ox.ac.uk&sz=128" width="24" height="24" align="center" alt="Kavli Institute for Nanoscience Discovery, University of Oxford" /> Kavli Institute for Nanoscience Discovery, University of Oxford**
+**<img src="https://www.google.com/s2/favicons?domain=kavlinano.ox.ac.uk&sz=128" width="24" height="24" align="center" alt="Kavli Institute for Nanoscience Discovery, University of Oxford" style="background-color: white; border-radius: 4px;" /> Kavli Institute for Nanoscience Discovery, University of Oxford**
 > **Research Associate / Academic Visitor** · *Biomedical Engineering*
 
 **<img src="https://www.google.com/s2/favicons?domain=imperial.ac.uk&sz=128" width="24" height="24" align="center" alt="Imperial College London" /> Imperial College London**
