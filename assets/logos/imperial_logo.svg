@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+  <defs>
+    <clipPath id="round">
+      <rect width="24" height="24" rx="4" ry="4" />
+    </clipPath>
+  </defs>
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABlBMVEUAAM3///8h/qkGAAAAWklEQVR4nO3OgQkAMAjAMP3/6Z3gQMdA0geaCEmSJEkqy0YAAAAAAAAAI4A718sVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAb0A2AgAAAAAAABgBSJIkSVreAY9YCffqusnbAAAAAElFTkSuQmCC" width="24" height="24" clip-path="url(#round)" />
+</svg>

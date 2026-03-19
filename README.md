@@ -26,7 +26,7 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 
 <br>
 
-**<img src="https://avatars.githubusercontent.com/u/96115000?v=4" width="24" height="24" align="center" alt="Isomorphic Labs" /> Isomorphic Labs**
+**<img src="assets/logos/iso_logo.svg" width="24" height="24" align="center" alt="Isomorphic Labs" /> Isomorphic Labs**
 > **Research Investigator** · *Exploratory Sciences* (Current)
 
 **<img src="assets/logos/az_logo.svg" width="24" height="24" align="center" alt="AstraZeneca" /> AstraZeneca**
@@ -35,10 +35,10 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 **<img src="assets/logos/kavli_logo.svg" width="24" height="24" align="center" alt="Kavli Institute for Nanoscience Discovery, University of Oxford" /> Kavli Institute for Nanoscience Discovery, University of Oxford**
 > **Research Associate / Academic Visitor** · *Biomedical Engineering*
 
-**<img src="https://www.google.com/s2/favicons?domain=imperial.ac.uk&sz=128" width="24" height="24" align="center" alt="Imperial College London" /> Imperial College London**
+**<img src="assets/logos/imperial_logo.svg" width="24" height="24" align="center" alt="Imperial College London" /> Imperial College London**
 > **Postdoctoral Research Associate** · *Chemical Biology & Materials*
 
-**<img src="https://www.google.com/s2/favicons?domain=ucl.ac.uk&sz=128" width="24" height="24" align="center" alt="UCL" /> UCL**
+**<img src="assets/logos/ucl_logo.svg" width="24" height="24" align="center" alt="UCL" /> UCL**
 > **PhD Researcher** · *Synthetic Organic Chemistry*
 
 <br>
