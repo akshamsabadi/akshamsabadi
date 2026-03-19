@@ -27,19 +27,19 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 <br>
 
 **<img src="https://avatars.githubusercontent.com/u/96115000?v=4" width="24" height="24" align="center" alt="Isomorphic Labs" /> Isomorphic Labs**
-> <img src="assets/role_investigator.svg" alt="Research Investigator" style="vertical-align: middle;" /> · *Exploratory Sciences* (Current)
+> **Research Investigator** · *Exploratory Sciences* (Current)
 
 **<img src="https://www.google.com/s2/favicons?domain=astrazeneca.com&sz=128" width="24" height="24" align="center" alt="AstraZeneca" /> AstraZeneca**
-> <img src="assets/role_senior.svg" alt="Senior Scientist" style="vertical-align: middle;" /> · *Oncology Targeted Delivery*
+> **Senior Scientist** · *Oncology Targeted Delivery*
 
 **<img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" width="24" height="24" align="center" alt="University of Oxford" /> University of Oxford**
-> <img src="assets/role_visitor.svg" alt="Research Associate / Academic Visitor" style="vertical-align: middle;" /> · *Biomedical Engineering*
+> **Research Associate / Academic Visitor** · *Biomedical Engineering*
 
 **<img src="https://www.google.com/s2/favicons?domain=imperial.ac.uk&sz=128" width="24" height="24" align="center" alt="Imperial College London" /> Imperial College London**
-> <img src="assets/role_postdoc.svg" alt="Postdoctoral Research Associate" style="vertical-align: middle;" /> · *Chemical Biology & Materials*
+> **Postdoctoral Research Associate** · *Chemical Biology & Materials*
 
 **<img src="https://www.google.com/s2/favicons?domain=ucl.ac.uk&sz=128" width="24" height="24" align="center" alt="UCL" /> UCL**
-> <img src="assets/role_phd.svg" alt="PhD Researcher" style="vertical-align: middle;" /> · *Synthetic Organic Chemistry*
+> **PhD Researcher** · *Synthetic Organic Chemistry*
 
 <br>
 
@@ -87,5 +87,5 @@ In addition to research, I have a mild obsession with data visualisation & graph
 ### <img src="assets/title_analytics.svg" alt="✦ GitHub Analytics" />
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=1e1e2e&style=flat" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=313244&labelColor=1e1e2e&style=flat" alt="Profile Views" />
 </p>
