@@ -1,6 +1,7 @@
 <div align="center">
-  <h1>André Kütahya Shamsabadi</h1>
-  <h3>Chemical Biologist · AI/ML · Data Visualization</h3>
+  <img src="assets/title_main.svg" alt="André Kütahya Shamsabadi" />
+  <br>
+  <img src="assets/title_sub.svg" alt="Chemical Biologist · AI/ML · Data Visualization" />
 </div>
 
 <p align="center">
@@ -11,7 +12,7 @@
 
 ---
 
-### ✦ About Me
+### <img src="assets/title_about.svg" alt="✦ About Me" />
 
 Welcome! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, with a focus on designing and developing state-of-the-art therapeutics and diagnostics. 
 
@@ -19,21 +20,21 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
 
 ---
 
-### ✦ Experience
+### <img src="assets/title_exp.svg" alt="✦ Experience" />
 
 <br>
 <ul style="list-style-type: none;">
-  <li>💼 &nbsp;<b>Research Investigator</b> · <i>Exploratory Sciences</i> at <b>Isomorphic Labs</b> (Current)</li><br>
-  <li>🧪 &nbsp;<b>Senior Scientist</b> · <i>Oncology Targeted Delivery</i> at <b>AstraZeneca</b></li><br>
-  <li>🔬 &nbsp;<b>Research Associate</b> · <i>Materials & Bioengineering</i> at <b>University of Oxford & Imperial College London</b></li><br>
-  <li>🧬 &nbsp;<b>Research Assistant</b> · <i>Chemical Biology</i> at <b>UCL</b></li><br>
-  <li>🎓 &nbsp;<b>PhD Researcher</b> · <i>Synthetic Organic Chemistry</i> at <b>UCL</b></li>
+  <li><b>Research Investigator</b> · <i>Exploratory Sciences</i> at <b>Isomorphic Labs</b> (Current)</li><br>
+  <li><b>Senior Scientist</b> · <i>Oncology Targeted Delivery</i> at <b>AstraZeneca</b></li><br>
+  <li><b>Research Associate</b> · <i>Materials & Bioengineering</i> at <b>University of Oxford & Imperial College London</b></li><br>
+  <li><b>Research Assistant</b> · <i>Chemical Biology</i> at <b>UCL</b></li><br>
+  <li><b>PhD Researcher</b> · <i>Synthetic Organic Chemistry</i> at <b>UCL</b></li>
 </ul>
 <br>
 
 ---
 
-### ✦ Technical Toolkit
+### <img src="assets/title_tech.svg" alt="✦ Technical Toolkit" />
 
 <details>
 <summary><b>Programming & Ecosystem</b></summary>
@@ -60,7 +61,7 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
 
 ---
 
-### ✦ Aesthetic Graphs & Biotherapeutic Modalities
+### <img src="assets/title_graphs.svg" alt="✦ Aesthetic Graphs & Biotherapeutic Modalities" />
 
 In addition to research, I have a mild obsession with data visualization and graphic design. I intend to use this space to share code for generating aesthetic graphs and provide vector-format representations of my favorite biotherapeutic modalities in a personally-designed aesthetic.
 
@@ -68,7 +69,7 @@ In addition to research, I have a mild obsession with data visualization and gra
 
 ---
 
-### ✦ GitHub Analytics
+### <img src="assets/title_analytics.svg" alt="✦ GitHub Analytics" />
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=cba6f7&style=for-the-badge" alt="Profile Views" />
