@@ -50,13 +50,13 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 <b>Programming & Ecosystem</b>
 <br>
 <p>
-  <img src="assets/badges/badge_Python.svg" alt="Python"/>
-  <img src="assets/badges/badge_D3.js.svg" alt="D3.js"/>
-  <img src="assets/badges/badge_LaTeX.svg" alt="LaTeX"/>
+  <img src="assets/badges/badge_Obsidian.svg" alt="Obsidian"/>
   <img src="assets/badges/badge_VS_Code.svg" alt="VS Code"/>
-  <img src="assets/badges/badge_Jupyter.svg" alt="Jupyter"/>
   <img src="assets/badges/badge_Google_Colab.svg" alt="Google Colab"/>
   <img src="assets/badges/badge_Overleaf.svg" alt="Overleaf"/>
+  <img src="assets/badges/badge_Python.svg" alt="Python"/>
+  <img src="assets/badges/badge_LaTeX.svg" alt="LaTeX"/>
+  <img src="assets/badges/badge_D3.js.svg" alt="D3.js"/>
 </p>
 <br>
 
@@ -65,7 +65,6 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 <p>
   <img src="assets/badges/badge_PyMOL.svg" alt="PyMOL"/>
   <img src="assets/badges/badge_Inkscape.svg" alt="Inkscape"/>
-  <img src="assets/badges/badge_Obsidian.svg" alt="Obsidian"/>
   <img src="assets/badges/badge_Blender.svg" alt="Blender"/>
 </p>
 
