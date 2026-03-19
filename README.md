@@ -26,16 +26,16 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 
 <br>
 
-**Isomorphic Labs**
+**<img src="https://www.google.com/s2/favicons?domain=isomorphiclabs.com&sz=128" width="24" height="24" align="center" alt="Isomorphic Labs" /> Isomorphic Labs**
 > **Research Investigator** · *Exploratory Sciences* (Current)
 
-**AstraZeneca**
+**<img src="https://www.google.com/s2/favicons?domain=astrazeneca.com&sz=128" width="24" height="24" align="center" alt="AstraZeneca" /> AstraZeneca**
 > **Senior Scientist** · *Oncology Targeted Delivery*
 
-**University of Oxford & Imperial College London**
+**<img src="https://www.google.com/s2/favicons?domain=ox.ac.uk&sz=128" width="24" height="24" align="center" alt="University of Oxford" /> <img src="https://www.google.com/s2/favicons?domain=imperial.ac.uk&sz=128" width="24" height="24" align="center" alt="Imperial College London" /> University of Oxford & Imperial College London**
 > **Research Associate** · *Materials & Bioengineering*
 
-**UCL**
+**<img src="https://www.google.com/s2/favicons?domain=ucl.ac.uk&sz=128" width="24" height="24" align="center" alt="UCL" /> UCL**
 > **Research Assistant** · *Chemical Biology*  
 > **PhD Researcher** · *Synthetic Organic Chemistry*
 
