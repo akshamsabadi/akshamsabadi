@@ -14,9 +14,9 @@
 
 ### <img src="assets/title_about.svg" alt="✦ About Me" />
 
-Welcome! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise is in bioconjugation, organic/polymer synthesis, and biomedical engineering, with a focus on designing and developing state-of-the-art therapeutics and diagnostics. 
+Welcome! I’m **André**, a chemical biologist who enjoys exploring important and challenging problems in biotherapeutic design. With a foundational background in chemistry, my central motivation is to leverage this perspective to solve significant challenges in biology—which, in itself, is the most complex expression of chemistry known.
 
-My central tenet is that an interdisciplinary approach, paired with state-of-the-art computational techniques, is the most effective way to overcome the challenges of modern biomedical research.
+I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise spans bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on developing state-of-the-art therapeutics and diagnostics. I believe that an interdisciplinary approach, paired with advanced computational techniques, is the most effective way to drive modern biomedical research forward.
 
 ---
 
@@ -36,8 +36,7 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
 
 ### <img src="assets/title_tech.svg" alt="✦ Technical Toolkit" />
 
-<details>
-<summary><b>Programming & Ecosystem</b></summary>
+<b>Programming & Ecosystem</b>
 <br>
 <p>
   <img src="https://img.shields.io/badge/Python-1e1e2e?style=for-the-badge&logo=python&logoColor=89b4fa" alt="Python"/>
@@ -47,17 +46,16 @@ My central tenet is that an interdisciplinary approach, paired with state-of-the
   <img src="https://img.shields.io/badge/Jupyter-1e1e2e?style=for-the-badge&logo=jupyter&logoColor=fab387" alt="Jupyter"/>
   <img src="https://img.shields.io/badge/Google_Colab-1e1e2e?style=for-the-badge&logo=googlecolab&logoColor=f9e2af" alt="Google Colab"/>
 </p>
-</details>
+<br>
 
-<details>
-<summary><b>Design & Visualization</b></summary>
+<b>Design & Visualization</b>
 <br>
 <p>
   <img src="https://img.shields.io/badge/PyMOL-1e1e2e?style=for-the-badge&logo=moleculer&logoColor=89b4fa" alt="PyMOL"/>
+  <img src="https://img.shields.io/badge/ChimeraX-1e1e2e?style=for-the-badge&logoColor=a6e3a1" alt="ChimeraX"/>
   <img src="https://img.shields.io/badge/Inkscape-1e1e2e?style=for-the-badge&logo=inkscape&logoColor=cdd6f4" alt="Inkscape"/>
   <img src="https://img.shields.io/badge/Obsidian-1e1e2e?style=for-the-badge&logo=obsidian&logoColor=cba6f7" alt="Obsidian"/>
 </p>
-</details>
 
 ---
 
