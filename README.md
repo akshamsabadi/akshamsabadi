@@ -84,8 +84,7 @@ In addition to research, I have a mild obsession with data visualisation & graph
 
 ---
 
-### <img src="assets/title_analytics.svg" alt="✦ GitHub Analytics" />
-
+<br>
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=313244&labelColor=1e1e2e&style=flat" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=cba6f7&labelColor=1e1e2e&style=for-the-badge" alt="Profile Views" />
 </p>
