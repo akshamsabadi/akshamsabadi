@@ -76,7 +76,7 @@ In addition to research, I have a mild obsession with data visualisation & graph
 
 <br>
 <ul>
-  <li><b><a href="https://akshamsabadi.github.io/bioassay-LOD-fitter/">Bioassay LOD Fitter</a></b> (<a href="https://github.com/akshamsabadi/bioassay-LOD-fitter">Source Code</a>) - v0.3.14</li>
+  <li><b><a href="https://akshamsabadi.github.io/bioassay-LOD-fitter/">Bioassay LOD Fitter</a></b> (<a href="https://github.com/akshamsabadi/bioassay-LOD-fitter">Source Code</a>)</li>
 </ul>
 <br>
 
