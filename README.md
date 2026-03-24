@@ -86,5 +86,5 @@ In addition to research, I have a mild obsession with data visualisation & graph
 
 <br>
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=cba6f7&labelColor=1e1e2e&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=akshamsabadi&label=PROFILE+VIEWS&color=8e44ad&labelColor=1e1e2e&style=flat-square" alt="Profile Views" />
 </p>
