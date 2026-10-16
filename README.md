@@ -5,8 +5,8 @@
 </div>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/akshamsabadi/"><img src="assets/badges/badge_LinkedIn.svg" alt="LinkedIn" /></a>&nbsp;
-  <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao"><img src="assets/badges/badge_Google_Scholar.svg" alt="Google Scholar" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/akshamsabadi/"><img src="assets/badges/badge_LinkedIn.svg" alt="LinkedIn" /></a>
+  <a href="https://scholar.google.co.uk/citations?user=LZmZFtMAAAAJ&hl=en&oi=ao"><img src="assets/badges/badge_Google_Scholar.svg" alt="Google Scholar" /></a>
   <a href="https://orcid.org/0000-0001-8466-5621"><img src="assets/badges/badge_ORCID.svg" alt="ORCID" /></a>
 </p>
 

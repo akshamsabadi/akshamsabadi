@@ -606,68 +606,6 @@ def _build_toolkit_pill(
     return markup, pill_width
 
 
-def build_badge_pill_svg(
-    badge: BadgeSpec,
-    icon_b64: str,
-    font_url: str | None = None,
-) -> str:
-    """Constructs a standalone Catppuccin & Poppins solid-filled pill badge SVG.
-
-    Args:
-        badge: The `BadgeSpec` defining the badge label and Catppuccin accent color.
-        icon_b64: Base64-encoded SVG icon payload.
-        font_url: Optional `data:font/truetype;base64,...` URL for Poppins 600.
-
-    Returns:
-        Complete standalone SVG XML string for the badge pill.
-
-    Raises:
-        ValueError: If `icon_b64` is empty.
-    """
-    cleaned_icon_b64 = icon_b64.strip()
-    if not cleaned_icon_b64:
-        raise ValueError("icon_b64 must not be empty.")
-
-    raw_upper = badge.name.upper()
-    upper_label = html.escape(raw_upper)
-    text_width = _measure_poppins_uppercase_width(raw_upper)
-    pill_width = round(
-        _TOOLKIT_TEXT_START_OFFSET + text_width + _TOOLKIT_RIGHT_PADDING, 1
-    )
-    rect_width = round(pill_width - 1.0, 1)
-    rect_height = _TOOLKIT_PILL_HEIGHT - 1
-    text_center_x = round(
-        _TOOLKIT_TEXT_START_OFFSET + text_width / 2, 2
-    )
-    dark_hex = f"#{CATPPUCCIN_BASE}"
-    recolored_icon_b64 = _recolor_svg_base64(cleaned_icon_b64, dark_hex)
-
-    font_urls = {600: font_url} if font_url else None
-    style_block = _build_timeline_style_block(font_urls)
-
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'viewBox="0 0 {pill_width:g} {_TOOLKIT_PILL_HEIGHT}" '
-        f'width="{pill_width:g}" height="{_TOOLKIT_PILL_HEIGHT}" '
-        f'role="img" aria-label="{upper_label}">\n'
-        f"  <title>{upper_label}</title>\n"
-        f"{style_block}"
-        f'  <rect x="0.5" y="0.5" width="{rect_width:g}" height="{rect_height}" '
-        f'rx="{_TOOLKIT_PILL_RADIUS}" ry="{_TOOLKIT_PILL_RADIUS}" '
-        f'fill="{badge.normalized_stroke_color}" '
-        f'stroke="{badge.normalized_stroke_color}" stroke-width="1"/>\n'
-        f'  <image x="{_TOOLKIT_ICON_OFFSET_X}" y="{_TOOLKIT_ICON_OFFSET_Y}" '
-        f'width="{_TOOLKIT_ICON_SIZE}" height="{_TOOLKIT_ICON_SIZE}" '
-        f'href="data:image/svg+xml;base64,{recolored_icon_b64}"/>\n'
-        f'  <text x="{text_center_x:g}" y="{_TOOLKIT_TEXT_Y_OFFSET:g}" '
-        f'text-anchor="middle" font-family="{_FONT_STACK}" font-weight="600" '
-        f'font-size="{_TOOLKIT_FONT_SIZE:g}" '
-        f'letter-spacing="{_TOOLKIT_LETTER_SPACING:g}" '
-        f'fill="{dark_hex}">{upper_label}</text>\n'
-        f"</svg>\n"
-    )
-
-
 def build_technical_toolkit_svg(
     categories: Sequence[ToolkitCategorySpec],
     icon_base64_map: Mapping[str, str],

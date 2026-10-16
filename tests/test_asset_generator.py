@@ -84,12 +84,12 @@ class TestAssetGenerationCommands:
         assert "path0" not in content
 
     @patch("scripts.asset_generator._fetch_text")
-    def test_generate_badge_svg_handles_custom_svg_logo_and_builds_pill(
+    def test_generate_badge_svg_handles_custom_svg_logo_and_injects_border(
         self, mock_fetch_text: MagicMock, tmp_path: Path
     ) -> None:
-        """Verifies `generate_badge_svg` encodes custom SVG logos into a Poppins pill badge."""
+        """Verifies `generate_badge_svg` encodes custom SVG logos and adds a border."""
         mock_fetch_text.return_value = (
-            "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style></svg>"
+            '<svg><rect width="120" height="28" fill="#1e1e2e"/></svg>'
         )
         spec = BadgeSpec(
             name="Antigravity",
@@ -99,32 +99,7 @@ class TestAssetGenerationCommands:
         out_path = generate_badge_svg(spec, tmp_path / "badges")
         assert out_path.exists()
         assert out_path.name == "badge_Antigravity.svg"
-        content = out_path.read_text(encoding="utf-8")
-        assert 'fill="#cba6f7" stroke="#cba6f7"' in content
-        assert 'fill="#1e1e2e">ANTIGRAVITY</text>' in content
-
-    @patch("scripts.asset_generator._fetch_text")
-    def test_generate_badge_svg_reuses_existing_slug_badge_icon(
-        self, mock_fetch_text: MagicMock, tmp_path: Path
-    ) -> None:
-        """Verifies `generate_badge_svg` extracts icon from existing badge SVG when present."""
-        mock_fetch_text.return_value = (
-            "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style></svg>"
-        )
-        badges_dir = tmp_path / "badges"
-        badges_dir.mkdir(parents=True)
-        (badges_dir / "badge_ORCID.svg").write_text(
-            '<svg><image href="data:image/svg+xml;base64,PHN2Zz4="/></svg>',
-            encoding="utf-8",
-        )
-        spec = BadgeSpec(
-            name="ORCID",
-            stroke_color=CATPPUCCIN_MAUVE,
-            logo_slug="orcid",
-        )
-        out_path = generate_badge_svg(spec, badges_dir)
-        assert out_path.exists()
-        assert 'fill="#1e1e2e">ORCID</text>' in out_path.read_text(encoding="utf-8")
+        assert 'stroke="#cba6f7"' in out_path.read_text(encoding="utf-8")
 
     @patch("scripts.asset_generator._fetch_bytes")
     def test_generate_logo_svg_writes_wrapped_institution_logo(

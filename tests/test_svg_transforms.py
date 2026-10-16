@@ -13,7 +13,6 @@ from scripts.models import (
     ToolkitCategorySpec,
 )
 from scripts.svg_transforms import (
-    build_badge_pill_svg,
     build_experience_timeline_svg,
     build_institution_logo_svg,
     build_technical_toolkit_svg,
@@ -365,33 +364,3 @@ class TestExtractorsAndExperienceTimelineSvg:
         """Verifies empty `categories` or missing badge icon raises `ValueError`."""
         with pytest.raises(ValueError, match=match_msg):
             build_technical_toolkit_svg(categories, icon_map)
-
-    def test_build_badge_pill_svg_renders_solid_poppins_pill(self) -> None:
-        """Verifies standalone pill badge SVG has solid fill, dark text/icon, and embedded Poppins."""
-        linkedin = BadgeSpec(
-            name="LinkedIn", stroke_color=CATPPUCCIN_BLUE, custom_logo_svg="<svg/>"
-        )
-        raw_icon = base64.b64encode(
-            b'<svg fill="#89b4fa"><path d="M0 0"/></svg>'
-        ).decode("utf-8")
-        svg = build_badge_pill_svg(
-            linkedin, raw_icon, font_url="data:font/truetype;base64,FONT600="
-        )
-        ET.fromstring(svg)
-
-        assert 'aria-label="LINKEDIN"' in svg
-        assert "FONT600=" in svg
-        assert 'fill="#89b4fa" stroke="#89b4fa"' in svg
-        assert 'fill="#1e1e2e">LINKEDIN</text>' in svg
-
-        embedded_b64 = extract_embedded_svg_base64(svg)
-        decoded_icon = base64.b64decode(embedded_b64).decode("utf-8")
-        assert 'fill="#1e1e2e"' in decoded_icon
-
-    def test_build_badge_pill_svg_empty_icon_raises_value_error(self) -> None:
-        """Verifies empty `icon_b64` raises `ValueError`."""
-        linkedin = BadgeSpec(
-            name="LinkedIn", stroke_color=CATPPUCCIN_BLUE, custom_logo_svg="<svg/>"
-        )
-        with pytest.raises(ValueError, match="icon_b64 must not be empty"):
-            build_badge_pill_svg(linkedin, "   ")

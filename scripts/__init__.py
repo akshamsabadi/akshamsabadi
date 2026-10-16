@@ -34,7 +34,6 @@ from scripts.orcid_sync import (
     update_readme_publications,
 )
 from scripts.svg_transforms import (
-    build_badge_pill_svg,
     build_experience_timeline_svg,
     build_institution_logo_svg,
     build_technical_toolkit_svg,
@@ -46,7 +45,7 @@ from scripts.svg_transforms import (
     inject_badge_border,
 )
 
-__version__: Final[str] = "0.9.5"
+__version__: Final[str] = "0.9.4"
 
 __all__: Final[list[str]] = [
     "__version__",
@@ -64,7 +63,6 @@ __all__: Final[list[str]] = [
     "TECHNICAL_TOOLKIT_FILENAME",
     "TitleSpec",
     "ToolkitCategorySpec",
-    "build_badge_pill_svg",
     "build_experience_timeline_svg",
     "build_institution_logo_svg",
     "build_technical_toolkit_svg",
