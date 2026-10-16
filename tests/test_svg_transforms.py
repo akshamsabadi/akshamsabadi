@@ -4,13 +4,22 @@ import base64
 import xml.etree.ElementTree as ET
 import pytest
 
-from scripts.models import ExperienceEntrySpec, LogoSpec
+from scripts.models import (
+    BadgeSpec,
+    CATPPUCCIN_BLUE,
+    CATPPUCCIN_MAUVE,
+    ExperienceEntrySpec,
+    LogoSpec,
+    ToolkitCategorySpec,
+)
 from scripts.svg_transforms import (
     build_experience_timeline_svg,
     build_institution_logo_svg,
+    build_technical_toolkit_svg,
     colorize_and_encode_logo_svg,
     convert_typing_svg_to_static,
     extract_embedded_png_base64,
+    extract_embedded_svg_base64,
     extract_font_url_from_typing_svg,
     inject_badge_border,
 )
@@ -275,3 +284,71 @@ class TestExtractorsAndExperienceTimelineSvg:
         """Verifies empty `entries` or missing logo data raises `ValueError`."""
         with pytest.raises(ValueError, match=match_msg):
             build_experience_timeline_svg(entries, logo_map)
+
+    def test_extract_embedded_svg_base64_returns_payload(self) -> None:
+        """Verifies embedded SVG base64 string is extracted from a badge SVG."""
+        svg = '<svg><image href="data:image/svg+xml;base64,PHN2Zz4="/></svg>'
+        assert extract_embedded_svg_base64(svg) == "PHN2Zz4="
+
+    def test_extract_embedded_svg_base64_raises_when_missing(self) -> None:
+        """Verifies `ValueError` is raised when no SVG data URI is present."""
+        with pytest.raises(ValueError, match="No embedded data:image/svg\\+xml;base64"):
+            extract_embedded_svg_base64("<svg><rect/></svg>")
+
+    def test_build_technical_toolkit_svg_renders_categories_and_pills(self) -> None:
+        """Verifies toolkit SVG structure, category headings, pill layout, and XML validity."""
+        obsidian = BadgeSpec(
+            name="Obsidian", stroke_color=CATPPUCCIN_MAUVE, logo_slug="obsidian"
+        )
+        vscode = BadgeSpec(
+            name="VS Code", stroke_color=CATPPUCCIN_BLUE, custom_logo_svg="<svg/>"
+        )
+        categories = (
+            ToolkitCategorySpec(
+                title="Programming & Ecosystem", badges=(obsidian, vscode)
+            ),
+        )
+        icons = {"Obsidian": "PHN2Zz4=", "VS Code": "PHN2ZzI="}
+        svg = build_technical_toolkit_svg(
+            categories, icons, font_url="data:font/truetype;base64,FONT600="
+        )
+        ET.fromstring(svg)
+
+        assert 'viewBox="0 0 800 142"' in svg
+        assert "Programming &amp; Ecosystem" in svg
+        assert ">OBSIDIAN</text>" in svg
+        assert ">VS CODE</text>" in svg
+        assert 'stroke="#cba6f7"' in svg
+        assert 'stroke="#89b4fa"' in svg
+
+    @pytest.mark.parametrize(
+        ("categories", "icon_map", "match_msg"),
+        [
+            ((), {"Obsidian": "PHN2Zz4="}, "categories must not be empty"),
+            (
+                (
+                    ToolkitCategorySpec(
+                        title="Design & Visualisation",
+                        badges=(
+                            BadgeSpec(
+                                name="PyMOL",
+                                stroke_color=CATPPUCCIN_BLUE,
+                                logo_slug="moleculer",
+                            ),
+                        ),
+                    ),
+                ),
+                {},
+                "Missing base64 SVG icon for badge 'PyMOL'",
+            ),
+        ],
+    )
+    def test_build_technical_toolkit_svg_invalid_inputs_raise_value_error(
+        self,
+        categories: tuple[ToolkitCategorySpec, ...],
+        icon_map: dict[str, str],
+        match_msg: str,
+    ) -> None:
+        """Verifies empty `categories` or missing badge icon raises `ValueError`."""
+        with pytest.raises(ValueError, match=match_msg):
+            build_technical_toolkit_svg(categories, icon_map)

@@ -32,23 +32,8 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 
 ### <img src="assets/title_tech.svg" alt="✦ Technical Toolkit" />
 
-<b>Programming & Ecosystem</b>
-<br>
 <p>
-  <img src="assets/badges/badge_Obsidian.svg" alt="Obsidian"/>
-  <img src="assets/badges/badge_Antigravity.svg" alt="Antigravity"/>
-  <img src="assets/badges/badge_VS_Code.svg" alt="VS Code"/>
-  <img src="assets/badges/badge_Google_Colab.svg" alt="Google Colab"/>
-  <img src="assets/badges/badge_Overleaf.svg" alt="Overleaf"/>
-</p>
-<br>
-
-<b>Design & Visualisation</b>
-<br>
-<p>
-  <img src="assets/badges/badge_PyMOL.svg" alt="PyMOL"/>
-  <img src="assets/badges/badge_Inkscape.svg" alt="Inkscape"/>
-  <img src="assets/badges/badge_Blender.svg" alt="Blender"/>
+  <img src="assets/technical_toolkit.svg" alt="Technical Toolkit" />
 </p>
 
 ---

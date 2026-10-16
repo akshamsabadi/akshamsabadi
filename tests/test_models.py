@@ -13,6 +13,7 @@ from scripts.models import (
     LogoSpec,
     Publication,
     TitleSpec,
+    ToolkitCategorySpec,
 )
 
 
@@ -20,8 +21,8 @@ class TestPackageMetadata:
     """Tests for package-level version and metadata."""
 
     def test_version_matches_expected_semver(self) -> None:
-        """Verifies the package version is set to 0.9.1."""
-        assert __version__ == "0.9.1"
+        """Verifies the package version is set to 0.9.2."""
+        assert __version__ == "0.9.2"
 
 
 class TestTitleSpec:
@@ -231,6 +232,49 @@ class TestBadgeSpec:
                 logo_slug=logo_slug,
                 custom_logo_svg=custom_logo_svg,
             )
+
+
+class TestToolkitCategorySpec:
+    """Tests for `ToolkitCategorySpec` normal, edge, and failure behaviors."""
+
+    def test_valid_toolkit_category_spec(self) -> None:
+        """Verifies `ToolkitCategorySpec` stores title and badges tuple."""
+        badge = BadgeSpec(
+            name="Obsidian", stroke_color=CATPPUCCIN_MAUVE, logo_slug="obsidian"
+        )
+        category = ToolkitCategorySpec(
+            title="Programming & Ecosystem", badges=(badge,)
+        )
+        assert category.title == "Programming & Ecosystem"
+        assert category.badges == (badge,)
+
+    @pytest.mark.parametrize(
+        ("title", "badges", "match_msg"),
+        [
+            (
+                "   ",
+                (
+                    BadgeSpec(
+                        name="Obsidian",
+                        stroke_color=CATPPUCCIN_MAUVE,
+                        logo_slug="obsidian",
+                    ),
+                ),
+                "ToolkitCategorySpec.title must not be empty",
+            ),
+            (
+                "Design & Visualisation",
+                (),
+                "ToolkitCategorySpec.badges must not be empty",
+            ),
+        ],
+    )
+    def test_invalid_toolkit_category_raises_value_error(
+        self, title: str, badges: tuple[BadgeSpec, ...], match_msg: str
+    ) -> None:
+        """Verifies empty `title` or empty `badges` raises `ValueError`."""
+        with pytest.raises(ValueError, match=match_msg):
+            ToolkitCategorySpec(title=title, badges=badges)
 
 
 class TestLogoSpec:

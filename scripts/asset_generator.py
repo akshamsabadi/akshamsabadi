@@ -1,4 +1,4 @@
-"""Asset generation commands and canonical specifications for SVG titles, badges, logos, and timeline."""
+"""Asset generation commands and canonical specifications for SVG titles, badges, logos, timeline, and toolkit."""
 
 from collections.abc import Sequence
 from pathlib import Path
@@ -18,19 +18,23 @@ from scripts.models import (
     ExperienceEntrySpec,
     LogoSpec,
     TitleSpec,
+    ToolkitCategorySpec,
 )
 from scripts.svg_transforms import (
     build_experience_timeline_svg,
     build_institution_logo_svg,
+    build_technical_toolkit_svg,
     colorize_and_encode_logo_svg,
     convert_typing_svg_to_static,
     extract_embedded_png_base64,
+    extract_embedded_svg_base64,
     extract_font_url_from_typing_svg,
     inject_badge_border,
 )
 
 DEFAULT_HTTP_TIMEOUT_SECONDS: Final[float] = 15.0
 EXPERIENCE_TIMELINE_FILENAME: Final[str] = "experience_timeline.svg"
+TECHNICAL_TOOLKIT_FILENAME: Final[str] = "technical_toolkit.svg"
 _DEFAULT_USER_AGENT: Final[str] = "Mozilla/5.0"
 _TYPING_SVG_FONT_ENDPOINT: Final[str] = "https://readme-typing-svg.demolab.com"
 _TIMELINE_FONT_WEIGHTS: Final[tuple[int, ...]] = (400, 500, 600)
@@ -57,12 +61,18 @@ ANTIGRAVITY_ICON_SVG: Final[str] = (
 )
 
 VSCODE_ICON_SVG: Final[str] = (
-    '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#89b4fa">'
-    "<title>Visual Studio Code</title>"
-    '<path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.291L6.94 12.2a.746.746 '
-    "0 0 1-.5.234l-5.466 2.06a.746.746 0 0 0-.294.697l5.426 10.55c.105.204.318.334"
-    ".547.334h.01a.614.614 0 0 0 .444-.226l9.605-11.706a1.494 1.494 0 0 0-1.705-.29"
-    'l-4.94 2.377A1.5 1.5 0 0 0 24 14.88V1.5a1.5 1.5 0 0 0-.85-1.413z"/>'
+    '<svg fill="#89b4fa" role="img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">'
+    "<title>VS Code</title>"
+    '<path fill-rule="evenodd" clip-rule="evenodd" d="M70.9119 99.3171C72.4869 99.9307 '
+    "74.2828 99.8914 75.8725 99.1264L96.4608 89.2197C98.6242 88.1787 100 85.9892 100 "
+    "83.5872V16.4133C100 14.0113 98.6243 11.8218 96.4609 10.7808L75.8725 0.873756C73.7862 "
+    "-0.130129 71.3446 0.11576 69.5135 1.44695C69.252 1.63711 69.0028 1.84943 68.769 "
+    "2.08341L29.3551 38.0415L12.1872 25.0096C10.589 23.7965 8.35363 23.8959 6.86933 "
+    "25.2461L1.36303 30.2549C-0.452552 31.9064 -0.454633 34.7627 1.35853 36.417L16.2471 "
+    "50.0001L1.35853 63.5832C-0.454633 65.2374 -0.452552 68.0938 1.36303 69.7453L6.86933 "
+    "74.7541C8.35363 76.1043 10.589 76.2037 12.1872 74.9905L29.3551 61.9587L68.769 "
+    "97.9167C69.3925 98.5406 70.1246 99.0104 70.9119 99.3171ZM75.0152 27.2989L45.1091 "
+    '50.0001L75.0152 72.7012V27.2989Z"/>'
     "</svg>"
 )
 
@@ -125,6 +135,47 @@ DEFAULT_TITLE_SPECS: Final[tuple[TitleSpec, ...]] = (
     ),
 )
 
+_OBSIDIAN_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Obsidian",
+    stroke_color=CATPPUCCIN_MAUVE,
+    logo_slug="obsidian",
+)
+_ANTIGRAVITY_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Antigravity",
+    stroke_color=CATPPUCCIN_TEAL,
+    custom_logo_svg=ANTIGRAVITY_ICON_SVG,
+)
+_VSCODE_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="VS Code",
+    stroke_color=CATPPUCCIN_BLUE,
+    custom_logo_svg=VSCODE_ICON_SVG,
+)
+_GOOGLE_COLAB_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Google Colab",
+    stroke_color=CATPPUCCIN_YELLOW,
+    logo_slug="googlecolab",
+)
+_OVERLEAF_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Overleaf",
+    stroke_color=CATPPUCCIN_GREEN,
+    logo_slug="overleaf",
+)
+_PYMOL_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="PyMOL",
+    stroke_color=CATPPUCCIN_BLUE,
+    logo_slug="moleculer",
+)
+_INKSCAPE_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Inkscape",
+    stroke_color=CATPPUCCIN_TEXT,
+    logo_slug="inkscape",
+)
+_BLENDER_BADGE: Final[BadgeSpec] = BadgeSpec(
+    name="Blender",
+    stroke_color=CATPPUCCIN_PEACH,
+    logo_slug="blender",
+)
+
 DEFAULT_BADGE_SPECS: Final[tuple[BadgeSpec, ...]] = (
     BadgeSpec(
         name="LinkedIn",
@@ -141,45 +192,34 @@ DEFAULT_BADGE_SPECS: Final[tuple[BadgeSpec, ...]] = (
         stroke_color=CATPPUCCIN_GREEN,
         logo_slug="orcid",
     ),
-    BadgeSpec(
-        name="Obsidian",
-        stroke_color=CATPPUCCIN_MAUVE,
-        logo_slug="obsidian",
+    _OBSIDIAN_BADGE,
+    _ANTIGRAVITY_BADGE,
+    _VSCODE_BADGE,
+    _GOOGLE_COLAB_BADGE,
+    _OVERLEAF_BADGE,
+    _PYMOL_BADGE,
+    _INKSCAPE_BADGE,
+    _BLENDER_BADGE,
+)
+
+DEFAULT_TOOLKIT_CATEGORIES: Final[tuple[ToolkitCategorySpec, ...]] = (
+    ToolkitCategorySpec(
+        title="Programming & Ecosystem",
+        badges=(
+            _OBSIDIAN_BADGE,
+            _ANTIGRAVITY_BADGE,
+            _VSCODE_BADGE,
+            _GOOGLE_COLAB_BADGE,
+            _OVERLEAF_BADGE,
+        ),
     ),
-    BadgeSpec(
-        name="Antigravity",
-        stroke_color=CATPPUCCIN_TEAL,
-        custom_logo_svg=ANTIGRAVITY_ICON_SVG,
-    ),
-    BadgeSpec(
-        name="VS Code",
-        stroke_color=CATPPUCCIN_BLUE,
-        custom_logo_svg=VSCODE_ICON_SVG,
-    ),
-    BadgeSpec(
-        name="Google Colab",
-        stroke_color=CATPPUCCIN_YELLOW,
-        logo_slug="googlecolab",
-    ),
-    BadgeSpec(
-        name="Overleaf",
-        stroke_color=CATPPUCCIN_GREEN,
-        logo_slug="overleaf",
-    ),
-    BadgeSpec(
-        name="PyMOL",
-        stroke_color=CATPPUCCIN_BLUE,
-        logo_slug="moleculer",
-    ),
-    BadgeSpec(
-        name="Inkscape",
-        stroke_color=CATPPUCCIN_TEXT,
-        logo_slug="inkscape",
-    ),
-    BadgeSpec(
-        name="Blender",
-        stroke_color=CATPPUCCIN_PEACH,
-        logo_slug="blender",
+    ToolkitCategorySpec(
+        title="Design & Visualisation",
+        badges=(
+            _PYMOL_BADGE,
+            _INKSCAPE_BADGE,
+            _BLENDER_BADGE,
+        ),
     ),
 )
 
@@ -405,15 +445,87 @@ def generate_experience_svg(
     return output_path
 
 
+def _fetch_toolkit_poppins_font_url(
+    categories: Sequence[ToolkitCategorySpec],
+    timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
+) -> str:
+    """Fetches a subsetted Poppins 600 truetype data URL for toolkit headers and pills."""
+    glyph_parts: list[str] = []
+    for category in categories:
+        glyph_parts.append(category.title)
+        for badge in category.badges:
+            glyph_parts.append(badge.name.upper())
+    encoded_lines = urllib.parse.quote_plus(" ".join(glyph_parts))
+    url = (
+        f"{_TYPING_SVG_FONT_ENDPOINT}?font=Poppins&weight=600"
+        f"&size=15&color=cba6f7&lines={encoded_lines}"
+    )
+    raw_svg = _fetch_text(url, timeout_seconds=timeout_seconds)
+    return extract_font_url_from_typing_svg(raw_svg)
+
+
+def generate_technical_toolkit_svg(
+    assets_root: Path,
+    categories: Sequence[ToolkitCategorySpec] = DEFAULT_TOOLKIT_CATEGORIES,
+    timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
+) -> Path:
+    """Generates `assets/technical_toolkit.svg` from badge icons and Poppins 600 font.
+
+    Args:
+        assets_root: Root `assets/` directory containing `badges/*.svg`.
+        categories: Sequence of `ToolkitCategorySpec` rows to render.
+        timeout_seconds: Network timeout in seconds for font subsetting request.
+
+    Returns:
+        Path to the generated `technical_toolkit.svg` file.
+
+    Raises:
+        FileNotFoundError: If a required badge SVG in `assets/badges/` is missing.
+    """
+    assets_root.mkdir(parents=True, exist_ok=True)
+    badges_dir = assets_root / "badges"
+    icon_base64_map: dict[str, str] = {}
+
+    for category in categories:
+        for badge in category.badges:
+            if badge.custom_logo_svg is not None:
+                encoded = colorize_and_encode_logo_svg(
+                    badge.custom_logo_svg, fill_color=badge.normalized_stroke_color
+                )
+                icon_base64_map[badge.name] = encoded.replace("%2B", "+")
+                continue
+
+            badge_path = badges_dir / badge.output_filename
+            if not badge_path.exists():
+                raise FileNotFoundError(
+                    f"Required badge SVG not found: {badge_path}"
+                )
+            badge_svg_text = badge_path.read_text(encoding="utf-8")
+            icon_base64_map[badge.name] = extract_embedded_svg_base64(badge_svg_text)
+
+    font_url = _fetch_toolkit_poppins_font_url(
+        categories, timeout_seconds=timeout_seconds
+    )
+    toolkit_svg = build_technical_toolkit_svg(
+        categories=categories,
+        icon_base64_map=icon_base64_map,
+        font_url=font_url,
+    )
+    output_path = assets_root / TECHNICAL_TOOLKIT_FILENAME
+    output_path.write_text(toolkit_svg, encoding="utf-8")
+    return output_path
+
+
 def generate_all_assets(
     assets_root: Path,
     titles: Sequence[TitleSpec] = DEFAULT_TITLE_SPECS,
     badges: Sequence[BadgeSpec] = DEFAULT_BADGE_SPECS,
     logos: Sequence[LogoSpec] = DEFAULT_LOGO_SPECS,
     experiences: Sequence[ExperienceEntrySpec] = DEFAULT_EXPERIENCE_SPECS,
+    toolkit_categories: Sequence[ToolkitCategorySpec] = DEFAULT_TOOLKIT_CATEGORIES,
     timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
 ) -> list[Path]:
-    """Generates all configured title, badge, logo, and experience SVG assets.
+    """Generates all configured title, badge, logo, experience, and toolkit SVG assets.
 
     Args:
         assets_root: Root `assets/` directory path.
@@ -421,6 +533,7 @@ def generate_all_assets(
         badges: Sequence of badge specifications to generate.
         logos: Sequence of institution logo specifications to generate.
         experiences: Sequence of experience timeline entries to generate.
+        toolkit_categories: Sequence of toolkit categories to generate.
         timeout_seconds: Network timeout in seconds per request.
 
     Returns:
@@ -446,6 +559,14 @@ def generate_all_assets(
         generated_paths.append(
             generate_experience_svg(
                 assets_root, entries=experiences, timeout_seconds=timeout_seconds
+            )
+        )
+    if toolkit_categories:
+        generated_paths.append(
+            generate_technical_toolkit_svg(
+                assets_root,
+                categories=toolkit_categories,
+                timeout_seconds=timeout_seconds,
             )
         )
 

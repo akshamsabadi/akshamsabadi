@@ -208,6 +208,30 @@ class BadgeSpec:
 
 
 @dataclass(frozen=True)
+class ToolkitCategorySpec:
+    """Specification for a category row in the unified technical toolkit SVG.
+
+    Attributes:
+        title: Category heading (e.g. 'Programming & Ecosystem').
+        badges: Non-empty tuple of `BadgeSpec` items displayed in the category row.
+    """
+
+    title: str
+    badges: tuple[BadgeSpec, ...]
+
+    def __post_init__(self) -> None:
+        """Validates toolkit category title and badge tuple.
+
+        Raises:
+            ValueError: If `title` is blank or `badges` is empty.
+        """
+        if not self.title.strip():
+            raise ValueError("ToolkitCategorySpec.title must not be empty.")
+        if not self.badges:
+            raise ValueError("ToolkitCategorySpec.badges must not be empty.")
+
+
+@dataclass(frozen=True)
 class LogoSpec:
     """Specification for an institution logo SVG with rounded corners.
 

@@ -11,11 +11,13 @@ from scripts.asset_generator import (
     DEFAULT_EXPERIENCE_SPECS,
     DEFAULT_LOGO_SPECS,
     DEFAULT_TITLE_SPECS,
+    DEFAULT_TOOLKIT_CATEGORIES,
     _fetch_bytes,
     generate_all_assets,
     generate_badge_svg,
     generate_experience_svg,
     generate_logo_svg,
+    generate_technical_toolkit_svg,
     generate_title_svg,
 )
 from scripts.models import (
@@ -24,6 +26,7 @@ from scripts.models import (
     ExperienceEntrySpec,
     LogoSpec,
     TitleSpec,
+    ToolkitCategorySpec,
 )
 
 
@@ -152,6 +155,53 @@ class TestAssetGenerationCommands:
         with pytest.raises(FileNotFoundError, match="Required logo SVG not found"):
             generate_experience_svg(tmp_path, entries=(entry,))
 
+    @patch("scripts.asset_generator._fetch_text")
+    def test_generate_technical_toolkit_svg_builds_from_badges_and_custom_icons(
+        self, mock_fetch_text: MagicMock, tmp_path: Path
+    ) -> None:
+        """Verifies `generate_technical_toolkit_svg` reads badge SVGs and writes `technical_toolkit.svg`."""
+        mock_fetch_text.return_value = (
+            "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style></svg>"
+        )
+        badges_dir = tmp_path / "badges"
+        badges_dir.mkdir(parents=True)
+        (badges_dir / "badge_Obsidian.svg").write_text(
+            '<svg><image href="data:image/svg+xml;base64,PHN2Zz4="/></svg>',
+            encoding="utf-8",
+        )
+        obsidian = BadgeSpec(
+            name="Obsidian", stroke_color=CATPPUCCIN_MAUVE, logo_slug="obsidian"
+        )
+        antigravity = BadgeSpec(
+            name="Antigravity",
+            stroke_color=CATPPUCCIN_MAUVE,
+            custom_logo_svg=ANTIGRAVITY_ICON_SVG,
+        )
+        category = ToolkitCategorySpec(
+            title="Programming & Ecosystem", badges=(obsidian, antigravity)
+        )
+        out_path = generate_technical_toolkit_svg(
+            tmp_path, categories=(category,)
+        )
+        assert out_path.exists()
+        assert out_path.name == "technical_toolkit.svg"
+        content = out_path.read_text(encoding="utf-8")
+        assert "OBSIDIAN" in content
+        assert "ANTIGRAVITY" in content
+
+    def test_generate_technical_toolkit_svg_missing_badge_raises_file_not_found(
+        self, tmp_path: Path
+    ) -> None:
+        """Verifies missing badge SVG file raises `FileNotFoundError`."""
+        obsidian = BadgeSpec(
+            name="Obsidian", stroke_color=CATPPUCCIN_MAUVE, logo_slug="obsidian"
+        )
+        category = ToolkitCategorySpec(
+            title="Programming & Ecosystem", badges=(obsidian,)
+        )
+        with pytest.raises(FileNotFoundError, match="Required badge SVG not found"):
+            generate_technical_toolkit_svg(tmp_path, categories=(category,))
+
     @patch("scripts.asset_generator._fetch_bytes")
     @patch("scripts.asset_generator._fetch_text")
     def test_generate_all_assets_creates_expected_directory_structure(
@@ -160,10 +210,11 @@ class TestAssetGenerationCommands:
         mock_fetch_bytes: MagicMock,
         tmp_path: Path,
     ) -> None:
-        """Verifies `generate_all_assets` writes titles, badges, logos, and timeline."""
+        """Verifies `generate_all_assets` writes titles, badges, logos, timeline, and toolkit."""
         mock_fetch_text.return_value = (
             "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style>"
             '<rect width="100" height="28" fill="#1e1e2e"/>'
+            '<image href="data:image/svg+xml;base64,PHN2Zz4="/>'
             '<text fill="#cba6f7">T</text></svg>'
         )
         mock_fetch_bytes.return_value = b"png-bytes"
@@ -171,15 +222,22 @@ class TestAssetGenerationCommands:
         paths = generate_all_assets(
             assets_root=tmp_path,
             titles=(DEFAULT_TITLE_SPECS[0],),
-            badges=(DEFAULT_BADGE_SPECS[0],),
+            badges=(DEFAULT_BADGE_SPECS[0], DEFAULT_BADGE_SPECS[3]),
             logos=(DEFAULT_LOGO_SPECS[0],),
             experiences=(DEFAULT_EXPERIENCE_SPECS[0],),
+            toolkit_categories=(
+                ToolkitCategorySpec(
+                    title="Programming & Ecosystem",
+                    badges=(DEFAULT_BADGE_SPECS[3],),
+                ),
+            ),
         )
-        assert len(paths) == 4
+        assert len(paths) == 6
         assert (tmp_path / "title_main.svg").exists()
         assert (tmp_path / "badges" / "badge_LinkedIn.svg").exists()
         assert (tmp_path / "logos" / "iso_logo.svg").exists()
         assert (tmp_path / "experience_timeline.svg").exists()
+        assert (tmp_path / "technical_toolkit.svg").exists()
 
     @patch("scripts.asset_generator.urllib.request.urlopen")
     def test_fetch_bytes_reads_response_stream(

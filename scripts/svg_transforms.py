@@ -7,6 +7,7 @@ import re
 from typing import Final
 
 from scripts.models import (
+    BadgeSpec,
     CATPPUCCIN_BASE,
     CATPPUCCIN_BLUE,
     CATPPUCCIN_GREEN,
@@ -17,6 +18,7 @@ from scripts.models import (
     ExperienceEntrySpec,
     LogoSpec,
     PURE_WHITE,
+    ToolkitCategorySpec,
 )
 
 _ANIMATED_PATH_PATTERN: Final[re.Pattern[str]] = re.compile(
@@ -39,6 +41,9 @@ _SHAPE_TAGS: Final[tuple[str, ...]] = ("path", "circle", "polygon")
 
 _EMBEDDED_PNG_PATTERN: Final[re.Pattern[str]] = re.compile(
     r"data:image/png;base64,([A-Za-z0-9+/=]+)"
+)
+_EMBEDDED_SVG_PATTERN: Final[re.Pattern[str]] = re.compile(
+    r"data:image/svg\+xml;base64,([A-Za-z0-9+/=]+)"
 )
 _EMBEDDED_FONT_URL_PATTERN: Final[re.Pattern[str]] = re.compile(
     r"src:\s*url\((data:font/truetype;base64,[^)]+)\)"
@@ -67,6 +72,69 @@ _CURRENT_PILL_TEXT_Y_OFFSET: Final[int] = 12
 _FONT_STACK: Final[str] = (
     "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 )
+
+_TOOLKIT_WIDTH: Final[int] = 800
+_TOOLKIT_HEIGHT: Final[int] = 142
+_TOOLKIT_START_X: Final[int] = 1
+_TOOLKIT_FIRST_HEADER_Y: Final[int] = 18
+_TOOLKIT_FIRST_PILL_Y: Final[int] = 28
+_TOOLKIT_CATEGORY_STRIDE: Final[int] = 74
+_TOOLKIT_PILL_HEIGHT: Final[int] = 28
+_TOOLKIT_PILL_RADIUS: Final[int] = 6
+_TOOLKIT_PILL_GAP: Final[int] = 10
+_TOOLKIT_ICON_OFFSET_X: Final[int] = 10
+_TOOLKIT_ICON_OFFSET_Y: Final[int] = 7
+_TOOLKIT_ICON_SIZE: Final[int] = 14
+_TOOLKIT_TEXT_START_OFFSET: Final[int] = 31
+_TOOLKIT_RIGHT_PADDING: Final[int] = 12
+_TOOLKIT_TEXT_Y_OFFSET: Final[float] = 17.8
+_TOOLKIT_FONT_SIZE: Final[float] = 10.5
+_TOOLKIT_LETTER_SPACING: Final[float] = 1.2
+
+_POPPINS_600_CHAR_ADVANCES: Final[Mapping[str, float]] = {
+    "A": 0.716,
+    "B": 0.643,
+    "C": 0.768,
+    "D": 0.717,
+    "E": 0.532,
+    "F": 0.530,
+    "G": 0.768,
+    "H": 0.717,
+    "I": 0.278,
+    "J": 0.570,
+    "K": 0.663,
+    "L": 0.459,
+    "M": 0.899,
+    "N": 0.735,
+    "O": 0.785,
+    "P": 0.608,
+    "Q": 0.787,
+    "R": 0.641,
+    "S": 0.609,
+    "T": 0.577,
+    "U": 0.697,
+    "V": 0.711,
+    "W": 1.024,
+    "X": 0.686,
+    "Y": 0.636,
+    "Z": 0.576,
+    "0": 0.646,
+    "1": 0.362,
+    "2": 0.574,
+    "3": 0.599,
+    "4": 0.661,
+    "5": 0.644,
+    "6": 0.640,
+    "7": 0.548,
+    "8": 0.643,
+    "9": 0.626,
+    " ": 0.238,
+    ".": 0.260,
+    "-": 0.583,
+    "&": 0.778,
+    "/": 0.486,
+}
+_DEFAULT_CHAR_ADVANCE: Final[float] = 0.64
 
 
 def convert_typing_svg_to_static(raw_svg: str) -> str:
@@ -263,6 +331,24 @@ def extract_embedded_png_base64(logo_svg: str) -> str:
     match = _EMBEDDED_PNG_PATTERN.search(logo_svg)
     if match is None:
         raise ValueError("No embedded data:image/png;base64 payload found in SVG.")
+    return match.group(1)
+
+
+def extract_embedded_svg_base64(badge_svg: str) -> str:
+    """Extracts the base64 SVG icon payload from a badge SVG string.
+
+    Args:
+        badge_svg: Raw SVG XML containing a `data:image/svg+xml;base64,...` href.
+
+    Returns:
+        The extracted base64-encoded SVG icon string.
+
+    Raises:
+        ValueError: If no embedded SVG data URI is found in `badge_svg`.
+    """
+    match = _EMBEDDED_SVG_PATTERN.search(badge_svg)
+    if match is None:
+        raise ValueError("No embedded data:image/svg+xml;base64 payload found in SVG.")
     return match.group(1)
 
 
@@ -464,5 +550,115 @@ def build_experience_timeline_svg(
         f"{defs_block}"
         f"{connector_lines}"
         f"{joined_rows}\n"
+        f"</svg>\n"
+    )
+
+
+def _measure_poppins_uppercase_width(label: str) -> float:
+    """Calculates the exact advance width of an uppercase Poppins 600 label."""
+    advance_em = sum(
+        _POPPINS_600_CHAR_ADVANCES.get(ch, _DEFAULT_CHAR_ADVANCE) for ch in label
+    )
+    tracking = max(0, len(label) - 1) * _TOOLKIT_LETTER_SPACING
+    return round(advance_em * _TOOLKIT_FONT_SIZE + tracking, 1)
+
+
+def _build_toolkit_pill(
+    badge: BadgeSpec, pill_x: float, pill_y: int, icon_b64: str
+) -> tuple[str, float]:
+    """Builds a single Catppuccin & Poppins badge pill and returns `(svg_markup, pill_width)`."""
+    upper_label = html.escape(badge.name.upper())
+    raw_upper = badge.name.upper()
+    text_width = _measure_poppins_uppercase_width(raw_upper)
+    pill_width = round(
+        _TOOLKIT_TEXT_START_OFFSET + text_width + _TOOLKIT_RIGHT_PADDING, 1
+    )
+    text_center_x = round(
+        pill_x + _TOOLKIT_TEXT_START_OFFSET + text_width / 2, 2
+    )
+    icon_x = round(pill_x + _TOOLKIT_ICON_OFFSET_X, 1)
+    icon_y = pill_y + _TOOLKIT_ICON_OFFSET_Y
+    text_y = round(pill_y + _TOOLKIT_TEXT_Y_OFFSET, 1)
+
+    markup = (
+        f'  <rect x="{pill_x:g}" y="{pill_y}" width="{pill_width:g}" '
+        f'height="{_TOOLKIT_PILL_HEIGHT}" rx="{_TOOLKIT_PILL_RADIUS}" '
+        f'ry="{_TOOLKIT_PILL_RADIUS}" fill="#{CATPPUCCIN_BASE}" '
+        f'stroke="{badge.normalized_stroke_color}" stroke-width="1"/>\n'
+        f'  <image x="{icon_x:g}" y="{icon_y}" '
+        f'width="{_TOOLKIT_ICON_SIZE}" height="{_TOOLKIT_ICON_SIZE}" '
+        f'href="data:image/svg+xml;base64,{icon_b64}"/>\n'
+        f'  <text x="{text_center_x:g}" y="{text_y:g}" text-anchor="middle" '
+        f'font-family="{_FONT_STACK}" font-weight="600" '
+        f'font-size="{_TOOLKIT_FONT_SIZE:g}" '
+        f'letter-spacing="{_TOOLKIT_LETTER_SPACING:g}" '
+        f'fill="{PURE_WHITE}">{upper_label}</text>'
+    )
+    return markup, pill_width
+
+
+def build_technical_toolkit_svg(
+    categories: Sequence[ToolkitCategorySpec],
+    icon_base64_map: Mapping[str, str],
+    font_url: str | None = None,
+) -> str:
+    """Constructs the unified Catppuccin & Poppins technical toolkit SVG.
+
+    Args:
+        categories: Ordered sequence of `ToolkitCategorySpec` category rows.
+        icon_base64_map: Mapping from `BadgeSpec.name` to base64-encoded SVG icon.
+        font_url: Optional `data:font/truetype;base64,...` URL for Poppins 600.
+
+    Returns:
+        Complete SVG XML string for `assets/technical_toolkit.svg`.
+
+    Raises:
+        ValueError: If `categories` is empty or any badge's `name` is missing
+            or empty in `icon_base64_map`.
+    """
+    if not categories:
+        raise ValueError("categories must not be empty.")
+
+    for category in categories:
+        for badge in category.badges:
+            if not icon_base64_map.get(badge.name, "").strip():
+                raise ValueError(
+                    f"Missing base64 SVG icon for badge '{badge.name}'."
+                )
+
+    font_urls = {600: font_url} if font_url else None
+    style_block = _build_timeline_style_block(font_urls)
+
+    category_blocks: list[str] = []
+    for index, category in enumerate(categories):
+        header_y = _TOOLKIT_FIRST_HEADER_Y + index * _TOOLKIT_CATEGORY_STRIDE
+        pill_y = _TOOLKIT_FIRST_PILL_Y + index * _TOOLKIT_CATEGORY_STRIDE
+        escaped_title = html.escape(category.title)
+
+        elements: list[str] = [
+            f'  <text x="{_TOOLKIT_START_X}" y="{header_y}" '
+            f'font-family="{_FONT_STACK}" font-weight="600" font-size="15.5" '
+            f'fill="{PURE_WHITE}">{escaped_title}</text>'
+        ]
+
+        current_x: float = float(_TOOLKIT_START_X)
+        for badge in category.badges:
+            icon_b64 = icon_base64_map[badge.name].strip()
+            pill_markup, pill_width = _build_toolkit_pill(
+                badge, current_x, pill_y, icon_b64
+            )
+            elements.append(pill_markup)
+            current_x = round(current_x + pill_width + _TOOLKIT_PILL_GAP, 1)
+
+        category_blocks.append("\n".join(elements))
+
+    joined_categories = "\n".join(category_blocks)
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {_TOOLKIT_WIDTH} {_TOOLKIT_HEIGHT}" '
+        f'width="{_TOOLKIT_WIDTH}" height="{_TOOLKIT_HEIGHT}" '
+        f'style="background-color: #00000000;">\n'
+        f"{style_block}"
+        f"{joined_categories}\n"
         f"</svg>\n"
     )
