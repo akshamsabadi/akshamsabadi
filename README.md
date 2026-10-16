@@ -51,12 +51,10 @@ I operate at the intersection of **peptide/protein engineering**, **drug discove
 <br>
 <p>
   <img src="assets/badges/badge_Obsidian.svg" alt="Obsidian"/>
+  <img src="assets/badges/badge_Antigravity.svg" alt="Antigravity"/>
   <img src="assets/badges/badge_VS_Code.svg" alt="VS Code"/>
   <img src="assets/badges/badge_Google_Colab.svg" alt="Google Colab"/>
   <img src="assets/badges/badge_Overleaf.svg" alt="Overleaf"/>
-  <img src="assets/badges/badge_Python.svg" alt="Python"/>
-  <img src="assets/badges/badge_LaTeX.svg" alt="LaTeX"/>
-  <img src="assets/badges/badge_D3.js.svg" alt="D3.js"/>
 </p>
 <br>
 
@@ -76,7 +74,7 @@ In addition to research, I have a mild obsession with data visualisation & graph
 
 <br>
 <ul>
-  <li><b><a href="https://akshamsabadi.github.io/bioassay-LOD-fitter/">Bioassay LOD Fitter (v0.5.10)</a></b> (<a href="https://github.com/akshamsabadi/bioassay-LOD-fitter">Source Code</a>)</li>
+  <li><b><a href="https://akshamsabadi.github.io/bioassay-LOD-fitter/">Bioassay LOD Fitter (v0.9.0)</a></b> (<a href="https://github.com/akshamsabadi/bioassay-LOD-fitter">Source Code</a>)</li>
 </ul>
 <br>
 
