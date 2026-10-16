@@ -296,7 +296,7 @@ class TestExtractorsAndExperienceTimelineSvg:
             extract_embedded_svg_base64("<svg><rect/></svg>")
 
     def test_build_technical_toolkit_svg_renders_categories_and_pills(self) -> None:
-        """Verifies toolkit SVG structure, category headings, pill layout, and XML validity."""
+        """Verifies toolkit SVG structure, solid pastel fills, and dark #1e1e2e text/icons."""
         obsidian = BadgeSpec(
             name="Obsidian", stroke_color=CATPPUCCIN_MAUVE, logo_slug="obsidian"
         )
@@ -308,7 +308,13 @@ class TestExtractorsAndExperienceTimelineSvg:
                 title="Programming & Ecosystem", badges=(obsidian, vscode)
             ),
         )
-        icons = {"Obsidian": "PHN2Zz4=", "VS Code": "PHN2ZzI="}
+        raw_icon_1 = base64.b64encode(
+            b'<svg fill="#cba6f7"><path d="M0 0"/></svg>'
+        ).decode("utf-8")
+        raw_icon_2 = base64.b64encode(
+            b'<svg fill="#89b4fa"><path d="M1 1"/></svg>'
+        ).decode("utf-8")
+        icons = {"Obsidian": raw_icon_1, "VS Code": raw_icon_2}
         svg = build_technical_toolkit_svg(
             categories, icons, font_url="data:font/truetype;base64,FONT600="
         )
@@ -316,10 +322,15 @@ class TestExtractorsAndExperienceTimelineSvg:
 
         assert 'viewBox="0 0 800 142"' in svg
         assert "Programming &amp; Ecosystem" in svg
-        assert ">OBSIDIAN</text>" in svg
-        assert ">VS CODE</text>" in svg
-        assert 'stroke="#cba6f7"' in svg
-        assert 'stroke="#89b4fa"' in svg
+        assert 'fill="#cba6f7" stroke="#cba6f7"' in svg
+        assert 'fill="#89b4fa" stroke="#89b4fa"' in svg
+        assert 'fill="#1e1e2e">OBSIDIAN</text>' in svg
+        assert 'fill="#1e1e2e">VS CODE</text>' in svg
+
+        embedded_b64 = extract_embedded_svg_base64(svg)
+        decoded_icon = base64.b64decode(embedded_b64).decode("utf-8")
+        assert 'fill="#1e1e2e"' in decoded_icon
+        assert "#cba6f7" not in decoded_icon
 
     @pytest.mark.parametrize(
         ("categories", "icon_map", "match_msg"),

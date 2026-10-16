@@ -45,7 +45,7 @@ from scripts.svg_transforms import (
     inject_badge_border,
 )
 
-__version__: Final[str] = "0.9.2"
+__version__: Final[str] = "0.9.3"
 
 __all__: Final[list[str]] = [
     "__version__",

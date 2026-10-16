@@ -21,8 +21,8 @@ class TestPackageMetadata:
     """Tests for package-level version and metadata."""
 
     def test_version_matches_expected_semver(self) -> None:
-        """Verifies the package version is set to 0.9.2."""
-        assert __version__ == "0.9.2"
+        """Verifies the package version is set to 0.9.3."""
+        assert __version__ == "0.9.3"
 
 
 class TestTitleSpec:

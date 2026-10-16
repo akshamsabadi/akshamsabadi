@@ -563,6 +563,13 @@ def _measure_poppins_uppercase_width(label: str) -> float:
     return round(advance_em * _TOOLKIT_FONT_SIZE + tracking, 1)
 
 
+def _recolor_svg_base64(icon_b64: str, fill_color: str) -> str:
+    """Decodes a base64 SVG icon, recolors its fills to `fill_color`, and re-encodes."""
+    raw_svg = base64.b64decode(icon_b64).decode("utf-8")
+    recolored_svg = _apply_shape_fill(raw_svg, fill_color)
+    return base64.b64encode(recolored_svg.encode("utf-8")).decode("utf-8")
+
+
 def _build_toolkit_pill(
     badge: BadgeSpec, pill_x: float, pill_y: int, icon_b64: str
 ) -> tuple[str, float]:
@@ -579,20 +586,22 @@ def _build_toolkit_pill(
     icon_x = round(pill_x + _TOOLKIT_ICON_OFFSET_X, 1)
     icon_y = pill_y + _TOOLKIT_ICON_OFFSET_Y
     text_y = round(pill_y + _TOOLKIT_TEXT_Y_OFFSET, 1)
+    dark_hex = f"#{CATPPUCCIN_BASE}"
+    recolored_icon_b64 = _recolor_svg_base64(icon_b64, dark_hex)
 
     markup = (
         f'  <rect x="{pill_x:g}" y="{pill_y}" width="{pill_width:g}" '
         f'height="{_TOOLKIT_PILL_HEIGHT}" rx="{_TOOLKIT_PILL_RADIUS}" '
-        f'ry="{_TOOLKIT_PILL_RADIUS}" fill="#{CATPPUCCIN_BASE}" '
+        f'ry="{_TOOLKIT_PILL_RADIUS}" fill="{badge.normalized_stroke_color}" '
         f'stroke="{badge.normalized_stroke_color}" stroke-width="1"/>\n'
         f'  <image x="{icon_x:g}" y="{icon_y}" '
         f'width="{_TOOLKIT_ICON_SIZE}" height="{_TOOLKIT_ICON_SIZE}" '
-        f'href="data:image/svg+xml;base64,{icon_b64}"/>\n'
+        f'href="data:image/svg+xml;base64,{recolored_icon_b64}"/>\n'
         f'  <text x="{text_center_x:g}" y="{text_y:g}" text-anchor="middle" '
         f'font-family="{_FONT_STACK}" font-weight="600" '
         f'font-size="{_TOOLKIT_FONT_SIZE:g}" '
         f'letter-spacing="{_TOOLKIT_LETTER_SPACING:g}" '
-        f'fill="{PURE_WHITE}">{upper_label}</text>'
+        f'fill="{dark_hex}">{upper_label}</text>'
     )
     return markup, pill_width
 
