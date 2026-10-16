@@ -9,6 +9,7 @@ from scripts.models import (
     CATPPUCCIN_BASE,
     CATPPUCCIN_BLUE,
     CATPPUCCIN_MAUVE,
+    ExperienceEntrySpec,
     LogoSpec,
     Publication,
     TitleSpec,
@@ -19,8 +20,8 @@ class TestPackageMetadata:
     """Tests for package-level version and metadata."""
 
     def test_version_matches_expected_semver(self) -> None:
-        """Verifies the package version is set to 0.9.0."""
-        assert __version__ == "0.9.0"
+        """Verifies the package version is set to 0.9.1."""
+        assert __version__ == "0.9.1"
 
 
 class TestTitleSpec:
@@ -282,6 +283,90 @@ class TestLogoSpec:
         """Verifies invalid `LogoSpec` inputs raise `ValueError`."""
         with pytest.raises(ValueError, match=match_msg):
             LogoSpec(**kwargs)  # type: ignore[arg-type]
+
+
+class TestExperienceEntrySpec:
+    """Tests for `ExperienceEntrySpec` normal, edge, and failure behaviors."""
+
+    def test_valid_experience_entry_properties(self) -> None:
+        """Verifies `logo_filename` and `normalized_background_color`."""
+        current_entry = ExperienceEntrySpec(
+            institution="Isomorphic Labs",
+            role="Research Investigator",
+            department="Exploratory Sciences",
+            logo_stem="iso_logo",
+            is_current=True,
+        )
+        assert current_entry.logo_filename == "iso_logo.svg"
+        assert current_entry.normalized_background_color is None
+        assert current_entry.is_current is True
+
+        bg_entry = ExperienceEntrySpec(
+            institution="AstraZeneca",
+            role="Senior Scientist",
+            department="Oncology Targeted Delivery",
+            logo_stem="az_logo",
+            background_color="8A0051",
+        )
+        assert bg_entry.normalized_background_color == "#8A0051"
+
+    @pytest.mark.parametrize(
+        ("kwargs", "match_msg"),
+        [
+            (
+                {
+                    "institution": "   ",
+                    "role": "Role",
+                    "department": "Dept",
+                    "logo_stem": "iso_logo",
+                },
+                "ExperienceEntrySpec.institution must not be empty",
+            ),
+            (
+                {
+                    "institution": "Org",
+                    "role": "",
+                    "department": "Dept",
+                    "logo_stem": "iso_logo",
+                },
+                "ExperienceEntrySpec.role must not be empty",
+            ),
+            (
+                {
+                    "institution": "Org",
+                    "role": "Role",
+                    "department": "  ",
+                    "logo_stem": "iso_logo",
+                },
+                "ExperienceEntrySpec.department must not be empty",
+            ),
+            (
+                {
+                    "institution": "Org",
+                    "role": "Role",
+                    "department": "Dept",
+                    "logo_stem": "",
+                },
+                "ExperienceEntrySpec.logo_stem must not be empty",
+            ),
+            (
+                {
+                    "institution": "Org",
+                    "role": "Role",
+                    "department": "Dept",
+                    "logo_stem": "iso_logo",
+                    "background_color": "#",
+                },
+                "Color string must not be empty",
+            ),
+        ],
+    )
+    def test_invalid_experience_entry_raises_value_error(
+        self, kwargs: dict[str, object], match_msg: str
+    ) -> None:
+        """Verifies invalid `ExperienceEntrySpec` inputs raise `ValueError`."""
+        with pytest.raises(ValueError, match=match_msg):
+            ExperienceEntrySpec(**kwargs)  # type: ignore[arg-type]
 
 
 class TestPublication:

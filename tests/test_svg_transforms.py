@@ -1,13 +1,17 @@
 """Unit tests for pure SVG transformation functions in `scripts.svg_transforms`."""
 
 import base64
+import xml.etree.ElementTree as ET
 import pytest
 
-from scripts.models import LogoSpec
+from scripts.models import ExperienceEntrySpec, LogoSpec
 from scripts.svg_transforms import (
+    build_experience_timeline_svg,
     build_institution_logo_svg,
     colorize_and_encode_logo_svg,
     convert_typing_svg_to_static,
+    extract_embedded_png_base64,
+    extract_font_url_from_typing_svg,
     inject_badge_border,
 )
 
@@ -163,3 +167,111 @@ class TestBuildInstitutionLogoSvg:
         spec = LogoSpec(name="iso_logo", source_url="https://example.com/iso.png")
         with pytest.raises(ValueError, match="image_bytes must not be empty"):
             build_institution_logo_svg(b"", spec)
+
+
+class TestExtractorsAndExperienceTimelineSvg:
+    """Tests for `extract_embedded_png_base64`, `extract_font_url_from_typing_svg`, and `build_experience_timeline_svg`."""
+
+    def test_extract_embedded_png_base64_returns_payload(self) -> None:
+        """Verifies embedded PNG base64 string is extracted accurately."""
+        svg = '<svg><image href="data:image/png;base64,iVBORw0KGgo=" width="24"/></svg>'
+        assert extract_embedded_png_base64(svg) == "iVBORw0KGgo="
+
+    def test_extract_embedded_png_base64_raises_when_missing(self) -> None:
+        """Verifies `ValueError` is raised if no PNG data URI is present."""
+        with pytest.raises(ValueError, match="No embedded data:image/png;base64"):
+            extract_embedded_png_base64("<svg><rect/></svg>")
+
+    def test_extract_font_url_from_typing_svg_returns_data_uri(self) -> None:
+        """Verifies `@font-face` truetype data URL is extracted."""
+        svg = "<svg><style>@font-face { src: url(data:font/truetype;base64,AAEAAA==) format('truetype'); }</style></svg>"
+        assert (
+            extract_font_url_from_typing_svg(svg)
+            == "data:font/truetype;base64,AAEAAA=="
+        )
+
+    def test_extract_font_url_from_typing_svg_raises_when_missing(self) -> None:
+        """Verifies `ValueError` is raised when no font data URI exists."""
+        with pytest.raises(ValueError, match="No embedded truetype font"):
+            extract_font_url_from_typing_svg("<svg></svg>")
+
+    def test_build_experience_timeline_svg_renders_valid_xml_with_current_pill_and_spine(
+        self,
+    ) -> None:
+        """Verifies timeline SVG structure, connector spine, CURRENT pill, and XML escaping."""
+        entries = [
+            ExperienceEntrySpec(
+                institution="Isomorphic Labs",
+                role="Research Investigator",
+                department="Exploratory Sciences",
+                logo_stem="iso_logo",
+                is_current=True,
+            ),
+            ExperienceEntrySpec(
+                institution="Imperial College London",
+                role="Postdoctoral Research Associate",
+                department="Chemical Biology & Materials",
+                logo_stem="imperial_logo",
+                background_color="#8A0051",
+            ),
+        ]
+        logos = {"iso_logo": "iVBORw0KGgo=", "imperial_logo": "QUJDRA=="}
+        fonts = {500: "data:font/truetype;base64,FONT500=", 600: "data:font/truetype;base64,FONT600="}
+
+        svg = build_experience_timeline_svg(entries, logos, font_urls=fonts)
+        ET.fromstring(svg)
+
+        assert 'viewBox="0 0 800 315"' in svg
+        assert "FONT600=" in svg
+        assert 'clipPath id="clip-iso_logo"' in svg
+        assert '<line x1="19" y1="49" x2="19" y2="67" stroke="#45475a"' in svg
+        assert ">CURRENT</text>" in svg
+        assert "Chemical Biology &amp; Materials" in svg
+        assert 'fill="#8A0051"' in svg
+
+    def test_build_experience_timeline_svg_without_fonts_or_clipped_logos(self) -> None:
+        """Verifies timeline SVG omits `<style>` and `<defs>` when not needed."""
+        entries = [
+            ExperienceEntrySpec(
+                institution="AstraZeneca",
+                role="Senior Scientist",
+                department="Oncology Targeted Delivery",
+                logo_stem="az_logo",
+                background_color="#8A0051",
+            )
+        ]
+        svg = build_experience_timeline_svg(
+            entries, {"az_logo": "iVBORw0KGgo="}, font_urls=None
+        )
+        ET.fromstring(svg)
+        assert "<style>" not in svg
+        assert "<defs>" not in svg
+        assert "<line " not in svg
+
+    @pytest.mark.parametrize(
+        ("entries", "logo_map", "match_msg"),
+        [
+            ([], {"iso_logo": "abc"}, "entries must not be empty"),
+            (
+                [
+                    ExperienceEntrySpec(
+                        institution="UCL",
+                        role="PhD Researcher",
+                        department="Chemistry",
+                        logo_stem="ucl_logo",
+                    )
+                ],
+                {},
+                "Missing base64 PNG data for logo_stem 'ucl_logo'",
+            ),
+        ],
+    )
+    def test_build_experience_timeline_svg_invalid_inputs_raise_value_error(
+        self,
+        entries: list[ExperienceEntrySpec],
+        logo_map: dict[str, str],
+        match_msg: str,
+    ) -> None:
+        """Verifies empty `entries` or missing logo data raises `ValueError`."""
+        with pytest.raises(ValueError, match=match_msg):
+            build_experience_timeline_svg(entries, logo_map)

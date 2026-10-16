@@ -5,6 +5,10 @@ from typing import Final
 import urllib.parse
 
 CATPPUCCIN_BASE: Final[str] = "1e1e2e"
+CATPPUCCIN_SURFACE0: Final[str] = "#313244"
+CATPPUCCIN_SURFACE1: Final[str] = "#45475a"
+CATPPUCCIN_OVERLAY0: Final[str] = "#6c7086"
+CATPPUCCIN_SUBTEXT0: Final[str] = "#a6adc8"
 CATPPUCCIN_MAUVE: Final[str] = "#cba6f7"
 CATPPUCCIN_BLUE: Final[str] = "#89b4fa"
 CATPPUCCIN_TEAL: Final[str] = "#94e2d5"
@@ -13,6 +17,7 @@ CATPPUCCIN_YELLOW: Final[str] = "#f9e2af"
 CATPPUCCIN_PEACH: Final[str] = "#fab387"
 CATPPUCCIN_PINK: Final[str] = "#f5c2e7"
 CATPPUCCIN_TEXT: Final[str] = "#cdd6f4"
+PURE_WHITE: Final[str] = "#ffffff"
 
 DEFAULT_FONT_FAMILY: Final[str] = "Poppins"
 DEFAULT_LOGO_DIMENSION: Final[int] = 24
@@ -250,6 +255,57 @@ class LogoSpec:
     def output_filename(self) -> str:
         """Returns the target SVG filename for this logo."""
         return f"{self.name}.svg"
+
+
+@dataclass(frozen=True)
+class ExperienceEntrySpec:
+    """Specification for a single row in the experience timeline SVG.
+
+    Attributes:
+        institution: Organization or university name.
+        role: Job title or academic role.
+        department: Division, department, or research area.
+        logo_stem: Stem name of the logo SVG in `assets/logos/` (e.g. 'iso_logo').
+        background_color: Optional solid background fill hex for inset logos.
+        is_current: Whether to render the 'CURRENT' pill badge beside the institution.
+    """
+
+    institution: str
+    role: str
+    department: str
+    logo_stem: str
+    background_color: str | None = None
+    is_current: bool = False
+
+    def __post_init__(self) -> None:
+        """Validates experience entry fields upon initialization.
+
+        Raises:
+            ValueError: If any required text field is blank or `background_color`
+                is an invalid empty hex string.
+        """
+        if not self.institution.strip():
+            raise ValueError("ExperienceEntrySpec.institution must not be empty.")
+        if not self.role.strip():
+            raise ValueError("ExperienceEntrySpec.role must not be empty.")
+        if not self.department.strip():
+            raise ValueError("ExperienceEntrySpec.department must not be empty.")
+        if not self.logo_stem.strip():
+            raise ValueError("ExperienceEntrySpec.logo_stem must not be empty.")
+        if self.background_color is not None:
+            _strip_hex_prefix(self.background_color)
+
+    @property
+    def logo_filename(self) -> str:
+        """Returns the source logo SVG filename (e.g. 'iso_logo.svg')."""
+        return f"{self.logo_stem}.svg"
+
+    @property
+    def normalized_background_color(self) -> str | None:
+        """Returns the background hex color prefixed with '#', or None."""
+        if self.background_color is None:
+            return None
+        return _ensure_hex_prefix(self.background_color)
 
 
 @dataclass(frozen=True)

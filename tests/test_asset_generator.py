@@ -8,19 +8,27 @@ import pytest
 from scripts.asset_generator import (
     ANTIGRAVITY_ICON_SVG,
     DEFAULT_BADGE_SPECS,
+    DEFAULT_EXPERIENCE_SPECS,
     DEFAULT_LOGO_SPECS,
     DEFAULT_TITLE_SPECS,
     _fetch_bytes,
     generate_all_assets,
     generate_badge_svg,
+    generate_experience_svg,
     generate_logo_svg,
     generate_title_svg,
 )
-from scripts.models import BadgeSpec, CATPPUCCIN_MAUVE, LogoSpec, TitleSpec
+from scripts.models import (
+    BadgeSpec,
+    CATPPUCCIN_MAUVE,
+    ExperienceEntrySpec,
+    LogoSpec,
+    TitleSpec,
+)
 
 
 class TestCanonicalSpecs:
-    """Tests verifying the integrity of default title, badge, and logo specifications."""
+    """Tests verifying the integrity of default title, badge, logo, and experience specs."""
 
     def test_default_badge_specs_include_antigravity_and_exclude_legacy_tools(
         self,
@@ -36,14 +44,16 @@ class TestCanonicalSpecs:
         assert "D3.js" not in badge_names
         assert "Jupyter" not in badge_names
 
-    def test_default_title_and_logo_specs_are_non_empty(self) -> None:
-        """Verifies default title and institution logo specs are populated."""
+    def test_default_title_logo_and_experience_specs_are_non_empty(self) -> None:
+        """Verifies default title, institution logo, and experience specs are populated."""
         assert len(DEFAULT_TITLE_SPECS) == 6
         assert len(DEFAULT_LOGO_SPECS) == 5
+        assert len(DEFAULT_EXPERIENCE_SPECS) == 5
+        assert DEFAULT_EXPERIENCE_SPECS[0].is_current is True
 
 
 class TestAssetGenerationCommands:
-    """Tests for `generate_title_svg`, `generate_badge_svg`, `generate_logo_svg`, and `generate_all_assets`."""
+    """Tests for `generate_title_svg`, `generate_badge_svg`, `generate_logo_svg`, `generate_experience_svg`, and `generate_all_assets`."""
 
     @patch("scripts.asset_generator._fetch_text")
     def test_generate_title_svg_writes_static_svg_file(
@@ -103,6 +113,45 @@ class TestAssetGenerationCommands:
         assert out_path.name == "iso_logo.svg"
         assert "data:image/png;base64," in out_path.read_text(encoding="utf-8")
 
+    @patch("scripts.asset_generator._fetch_text")
+    def test_generate_experience_svg_builds_timeline_from_logos(
+        self, mock_fetch_text: MagicMock, tmp_path: Path
+    ) -> None:
+        """Verifies `generate_experience_svg` reads logo SVGs and writes `experience_timeline.svg`."""
+        mock_fetch_text.return_value = (
+            "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style></svg>"
+        )
+        logos_dir = tmp_path / "logos"
+        logos_dir.mkdir(parents=True)
+        (logos_dir / "iso_logo.svg").write_text(
+            '<svg><image href="data:image/png;base64,aXNv"/></svg>',
+            encoding="utf-8",
+        )
+        entry = ExperienceEntrySpec(
+            institution="Isomorphic Labs",
+            role="Research Investigator",
+            department="Exploratory Sciences",
+            logo_stem="iso_logo",
+            is_current=True,
+        )
+        out_path = generate_experience_svg(tmp_path, entries=(entry,))
+        assert out_path.exists()
+        assert out_path.name == "experience_timeline.svg"
+        assert "Isomorphic Labs" in out_path.read_text(encoding="utf-8")
+
+    def test_generate_experience_svg_missing_logo_raises_file_not_found(
+        self, tmp_path: Path
+    ) -> None:
+        """Verifies missing logo SVG file raises `FileNotFoundError`."""
+        entry = ExperienceEntrySpec(
+            institution="Isomorphic Labs",
+            role="Research Investigator",
+            department="Exploratory Sciences",
+            logo_stem="missing_logo",
+        )
+        with pytest.raises(FileNotFoundError, match="Required logo SVG not found"):
+            generate_experience_svg(tmp_path, entries=(entry,))
+
     @patch("scripts.asset_generator._fetch_bytes")
     @patch("scripts.asset_generator._fetch_text")
     def test_generate_all_assets_creates_expected_directory_structure(
@@ -111,9 +160,10 @@ class TestAssetGenerationCommands:
         mock_fetch_bytes: MagicMock,
         tmp_path: Path,
     ) -> None:
-        """Verifies `generate_all_assets` writes titles, badges, and logos to subdirectories."""
+        """Verifies `generate_all_assets` writes titles, badges, logos, and timeline."""
         mock_fetch_text.return_value = (
-            '<svg><rect width="100" height="28" fill="#1e1e2e"/>'
+            "<svg><style>@font-face { src: url(data:font/truetype;base64,AAE=) format('truetype'); }</style>"
+            '<rect width="100" height="28" fill="#1e1e2e"/>'
             '<text fill="#cba6f7">T</text></svg>'
         )
         mock_fetch_bytes.return_value = b"png-bytes"
@@ -123,11 +173,13 @@ class TestAssetGenerationCommands:
             titles=(DEFAULT_TITLE_SPECS[0],),
             badges=(DEFAULT_BADGE_SPECS[0],),
             logos=(DEFAULT_LOGO_SPECS[0],),
+            experiences=(DEFAULT_EXPERIENCE_SPECS[0],),
         )
-        assert len(paths) == 3
+        assert len(paths) == 4
         assert (tmp_path / "title_main.svg").exists()
         assert (tmp_path / "badges" / "badge_LinkedIn.svg").exists()
         assert (tmp_path / "logos" / "iso_logo.svg").exists()
+        assert (tmp_path / "experience_timeline.svg").exists()
 
     @patch("scripts.asset_generator.urllib.request.urlopen")
     def test_fetch_bytes_reads_response_stream(

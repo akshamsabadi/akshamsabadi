@@ -1,8 +1,9 @@
-"""Asset generation commands and canonical specifications for SVG titles, badges, and logos."""
+"""Asset generation commands and canonical specifications for SVG titles, badges, logos, and timeline."""
 
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Final
+import urllib.parse
 import urllib.request
 
 from scripts.models import (
@@ -14,18 +15,25 @@ from scripts.models import (
     CATPPUCCIN_TEAL,
     CATPPUCCIN_TEXT,
     CATPPUCCIN_YELLOW,
+    ExperienceEntrySpec,
     LogoSpec,
     TitleSpec,
 )
 from scripts.svg_transforms import (
+    build_experience_timeline_svg,
     build_institution_logo_svg,
     colorize_and_encode_logo_svg,
     convert_typing_svg_to_static,
+    extract_embedded_png_base64,
+    extract_font_url_from_typing_svg,
     inject_badge_border,
 )
 
 DEFAULT_HTTP_TIMEOUT_SECONDS: Final[float] = 15.0
+EXPERIENCE_TIMELINE_FILENAME: Final[str] = "experience_timeline.svg"
 _DEFAULT_USER_AGENT: Final[str] = "Mozilla/5.0"
+_TYPING_SVG_FONT_ENDPOINT: Final[str] = "https://readme-typing-svg.demolab.com"
+_TIMELINE_FONT_WEIGHTS: Final[tuple[int, ...]] = (400, 500, 600)
 
 LINKEDIN_ICON_SVG: Final[str] = (
     '<svg xmlns="http://www.w3.org/2000/svg" fill="#89b4fa" viewBox="0 0 16 16">'
@@ -200,6 +208,42 @@ DEFAULT_LOGO_SPECS: Final[tuple[LogoSpec, ...]] = (
     ),
 )
 
+DEFAULT_EXPERIENCE_SPECS: Final[tuple[ExperienceEntrySpec, ...]] = (
+    ExperienceEntrySpec(
+        institution="Isomorphic Labs",
+        role="Research Investigator",
+        department="Exploratory Sciences",
+        logo_stem="iso_logo",
+        is_current=True,
+    ),
+    ExperienceEntrySpec(
+        institution="AstraZeneca",
+        role="Senior Scientist",
+        department="Oncology Targeted Delivery",
+        logo_stem="az_logo",
+        background_color="#8A0051",
+    ),
+    ExperienceEntrySpec(
+        institution="Kavli Institute for Nanoscience Discovery, University of Oxford",
+        role="Research Associate / Academic Visitor",
+        department="Biomedical Engineering",
+        logo_stem="kavli_logo",
+        background_color="#FFFFFF",
+    ),
+    ExperienceEntrySpec(
+        institution="Imperial College London",
+        role="Postdoctoral Research Associate",
+        department="Chemical Biology & Materials",
+        logo_stem="imperial_logo",
+    ),
+    ExperienceEntrySpec(
+        institution="UCL",
+        role="PhD Researcher",
+        department="Synthetic Organic Chemistry",
+        logo_stem="ucl_logo",
+    ),
+)
+
 
 def _fetch_bytes(
     url: str, timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS
@@ -304,20 +348,79 @@ def generate_logo_svg(
     return output_path
 
 
+def _fetch_poppins_font_urls(
+    entries: Sequence[ExperienceEntrySpec],
+    timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
+) -> dict[int, str]:
+    """Fetches subsetted Poppins truetype base64 URLs for all timeline text."""
+    combined_glyphs = "CURRENT · " + " ".join(
+        f"{entry.institution} {entry.role} {entry.department}" for entry in entries
+    )
+    encoded_lines = urllib.parse.quote_plus(combined_glyphs)
+    font_urls: dict[int, str] = {}
+    for weight in _TIMELINE_FONT_WEIGHTS:
+        url = (
+            f"{_TYPING_SVG_FONT_ENDPOINT}?font=Poppins&weight={weight}"
+            f"&size=15&color=cba6f7&lines={encoded_lines}"
+        )
+        raw_svg = _fetch_text(url, timeout_seconds=timeout_seconds)
+        font_urls[weight] = extract_font_url_from_typing_svg(raw_svg)
+    return font_urls
+
+
+def generate_experience_svg(
+    assets_root: Path,
+    entries: Sequence[ExperienceEntrySpec] = DEFAULT_EXPERIENCE_SPECS,
+    timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
+) -> Path:
+    """Generates `assets/experience_timeline.svg` from local logos and Poppins fonts.
+
+    Args:
+        assets_root: Root `assets/` directory containing `logos/*.svg`.
+        entries: Sequence of `ExperienceEntrySpec` rows to render.
+        timeout_seconds: Network timeout in seconds for font subsetting requests.
+
+    Returns:
+        Path to the generated `experience_timeline.svg` file.
+    """
+    assets_root.mkdir(parents=True, exist_ok=True)
+    logos_dir = assets_root / "logos"
+    logo_base64_map: dict[str, str] = {}
+
+    for entry in entries:
+        logo_path = logos_dir / entry.logo_filename
+        if not logo_path.exists():
+            raise FileNotFoundError(f"Required logo SVG not found: {logo_path}")
+        logo_svg_text = logo_path.read_text(encoding="utf-8")
+        logo_base64_map[entry.logo_stem] = extract_embedded_png_base64(logo_svg_text)
+
+    font_urls = _fetch_poppins_font_urls(entries, timeout_seconds=timeout_seconds)
+    timeline_svg = build_experience_timeline_svg(
+        entries=entries,
+        logo_base64_map=logo_base64_map,
+        font_urls=font_urls,
+    )
+    output_path = assets_root / EXPERIENCE_TIMELINE_FILENAME
+    output_path.write_text(timeline_svg, encoding="utf-8")
+    return output_path
+
+
 def generate_all_assets(
     assets_root: Path,
     titles: Sequence[TitleSpec] = DEFAULT_TITLE_SPECS,
     badges: Sequence[BadgeSpec] = DEFAULT_BADGE_SPECS,
     logos: Sequence[LogoSpec] = DEFAULT_LOGO_SPECS,
+    experiences: Sequence[ExperienceEntrySpec] = DEFAULT_EXPERIENCE_SPECS,
     timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
 ) -> list[Path]:
-    """Generates all configured title, badge, and logo SVG assets under `assets_root`.
+    """Generates all configured title, badge, logo, and experience SVG assets.
 
     Args:
         assets_root: Root `assets/` directory path.
         titles: Sequence of title specifications to generate.
         badges: Sequence of badge specifications to generate.
         logos: Sequence of institution logo specifications to generate.
+        experiences: Sequence of experience timeline entries to generate.
         timeout_seconds: Network timeout in seconds per request.
 
     Returns:
@@ -338,6 +441,12 @@ def generate_all_assets(
     for logo_spec in logos:
         generated_paths.append(
             generate_logo_svg(logo_spec, logos_dir, timeout_seconds=timeout_seconds)
+        )
+    if experiences:
+        generated_paths.append(
+            generate_experience_svg(
+                assets_root, entries=experiences, timeout_seconds=timeout_seconds
+            )
         )
 
     return generated_paths
