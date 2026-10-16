@@ -21,6 +21,7 @@ from scripts.models import (
     ToolkitCategorySpec,
 )
 from scripts.svg_transforms import (
+    build_badge_pill_svg,
     build_experience_timeline_svg,
     build_institution_logo_svg,
     build_technical_toolkit_svg,
@@ -332,12 +333,26 @@ def generate_title_svg(
     return output_path
 
 
+def _fetch_badge_poppins_font_url(
+    spec: BadgeSpec,
+    timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
+) -> str:
+    """Fetches a subsetted Poppins 600 truetype data URL for a single badge pill."""
+    encoded_lines = urllib.parse.quote_plus(spec.name.upper())
+    url = (
+        f"{_TYPING_SVG_FONT_ENDPOINT}?font=Poppins&weight=600"
+        f"&size=15&color=cba6f7&lines={encoded_lines}"
+    )
+    raw_svg = _fetch_text(url, timeout_seconds=timeout_seconds)
+    return extract_font_url_from_typing_svg(raw_svg)
+
+
 def generate_badge_svg(
     spec: BadgeSpec,
     output_dir: Path,
     timeout_seconds: float = DEFAULT_HTTP_TIMEOUT_SECONDS,
 ) -> Path:
-    """Fetches a shields.io badge SVG, injects a rounded border, and writes it.
+    """Builds a Catppuccin & Poppins solid-filled pill badge SVG and writes it.
 
     Args:
         spec: The `BadgeSpec` describing the badge.
@@ -348,20 +363,26 @@ def generate_badge_svg(
         Path to the written badge SVG file.
     """
     output_dir.mkdir(parents=True, exist_ok=True)
-    encoded_logo: str | None = None
+    output_path = output_dir / spec.output_filename
+
     if spec.custom_logo_svg is not None:
         encoded_logo = colorize_and_encode_logo_svg(
             spec.custom_logo_svg, fill_color=spec.normalized_stroke_color
         )
+        icon_b64 = encoded_logo.replace("%2B", "+")
+    elif output_path.exists():
+        icon_b64 = extract_embedded_svg_base64(
+            output_path.read_text(encoding="utf-8")
+        )
+    else:
+        raw_shield_svg = _fetch_text(
+            spec.to_shields_url(), timeout_seconds=timeout_seconds
+        )
+        icon_b64 = extract_embedded_svg_base64(raw_shield_svg)
 
-    shield_url = spec.to_shields_url(encoded_custom_logo=encoded_logo)
-    raw_shield_svg = _fetch_text(shield_url, timeout_seconds=timeout_seconds)
-    bordered_svg = inject_badge_border(
-        raw_shield_svg, stroke_color=spec.normalized_stroke_color
-    )
-
-    output_path = output_dir / spec.output_filename
-    output_path.write_text(bordered_svg, encoding="utf-8")
+    font_url = _fetch_badge_poppins_font_url(spec, timeout_seconds=timeout_seconds)
+    pill_svg = build_badge_pill_svg(spec, icon_b64=icon_b64, font_url=font_url)
+    output_path.write_text(pill_svg, encoding="utf-8")
     return output_path
 
 
