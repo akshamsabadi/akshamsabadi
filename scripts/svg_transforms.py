@@ -74,11 +74,11 @@ _FONT_STACK: Final[str] = (
 )
 
 _TOOLKIT_WIDTH: Final[int] = 800
-_TOOLKIT_HEIGHT: Final[int] = 142
+_TOOLKIT_HEIGHT: Final[int] = 154
 _TOOLKIT_START_X: Final[int] = 1
 _TOOLKIT_FIRST_HEADER_Y: Final[int] = 18
-_TOOLKIT_FIRST_PILL_Y: Final[int] = 28
-_TOOLKIT_CATEGORY_STRIDE: Final[int] = 74
+_TOOLKIT_FIRST_PILL_Y: Final[int] = 34
+_TOOLKIT_CATEGORY_STRIDE: Final[int] = 80
 _TOOLKIT_PILL_HEIGHT: Final[int] = 28
 _TOOLKIT_PILL_RADIUS: Final[int] = 6
 _TOOLKIT_PILL_GAP: Final[int] = 10

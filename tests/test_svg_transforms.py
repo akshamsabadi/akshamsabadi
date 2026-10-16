@@ -320,7 +320,8 @@ class TestExtractorsAndExperienceTimelineSvg:
         )
         ET.fromstring(svg)
 
-        assert 'viewBox="0 0 800 142"' in svg
+        assert 'viewBox="0 0 800 154"' in svg
+        assert 'y="34"' in svg
         assert "Programming &amp; Ecosystem" in svg
         assert 'fill="#cba6f7" stroke="#cba6f7"' in svg
         assert 'fill="#89b4fa" stroke="#89b4fa"' in svg
