@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/title_main.svg" alt="André Kütahya Shamsabadi" />
   <br>
-  <img src="assets/title_sub.svg" alt="Chemical Biologist · AI/ML · Data Visualisation" />
+  <img src="assets/title_sub.svg" alt="Chemical Biologist · AIDD · Data Visualisation" />
 </div>
 
 <p align="center">
