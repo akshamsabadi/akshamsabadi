@@ -18,7 +18,7 @@ Hey! I’m **André**, a chemical biologist who enjoys exploring important and c
 
 My foundational background is in organic chemistry, and an early fascination of mine was to utilise this to address significant challenges in biology, which in itself, is the most complex and important expression of chemistry.
 
-I operate at the intersection of **peptide/protein engineering**, **drug discovery**, and **AI/ML**. My expertise spans bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on developing next-generation therapeutics and diagnostics. My central tenet is that an interdisciplinary approach, paired with state-of-the-art tools & resources, is the most effective way to overcome the longstanding challenges in biomedical research.
+I operate at the intersection of **peptide/protein engineering** and **AI-driven drug discovery**. My expertise spans bioconjugation, organic/polymer synthesis, and biomedical engineering, all focused on developing next-generation therapeutics and diagnostics. My central tenet is that an interdisciplinary approach, paired with state-of-the-art tools & resources, is the most effective way to overcome the longstanding challenges in biomedical research.
 
 ---
 

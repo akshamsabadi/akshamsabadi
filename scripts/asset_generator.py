@@ -89,7 +89,7 @@ DEFAULT_TITLE_SPECS: Final[tuple[TitleSpec, ...]] = (
     ),
     TitleSpec(
         name="title_sub",
-        text="Chemical Biologist • AI/ML • Data Visualisation",
+        text="Chemical Biologist • AIDD • Data Visualisation",
         font_size=20,
         font_weight=500,
         color_hex=CATPPUCCIN_BLUE,
